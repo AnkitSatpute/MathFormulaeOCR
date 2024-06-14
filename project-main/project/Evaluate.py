@@ -1,7 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
 
-# In[2]:
 
 
 import re
@@ -10,8 +7,6 @@ import nltk
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 import json
 import Levenshtein
-
-# Download NLTK WordNet resource (if not already downloaded)
 try:
     nltk.data.find('corpora/wordnet.zip')
 except LookupError:
@@ -113,21 +108,9 @@ if __name__ == "__main__":
     for metric, value in combined_metrics.items():
         print(f"  {metric}: {value}")
     
-    # Organize data into a JSON structure
-    data = {
-        "predictions": [predicted_text],
-        "ground_truths": [ground_truth_text],
-        "metrics": combined_metrics
-    }
+   
     
-    # Save the data as a JSON file
-    with open("data.json", "w") as json_file:
-        json.dump(data, json_file, indent=4)
     
-    print("Data saved as data.json")
-
-
-# In[ ]:
 
 
 
