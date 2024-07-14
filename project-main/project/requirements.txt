@@ -1,3 +1,4 @@
+latex2mathml==3.64.0
 numpy==1.23.1
 nltk==3.6.7
 python==3.9
