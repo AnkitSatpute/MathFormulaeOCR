@@ -22,7 +22,7 @@ Accurately recognizing and understanding mathematical formulae in scientific doc
 ## Features
 
 - Techniques for enhancing the recognition of mathematical formulae.
-- Evaluation metrics and benchmarks used to measure the performance of recognition methods.
+- Evaluation metrics used to measure the performance of the recognition method.
 
 ## Installation
 
