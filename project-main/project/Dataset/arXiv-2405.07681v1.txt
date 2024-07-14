@@ -1,0 +1,944 @@
+harmoniccomputation.nb                                                                              0000664 0000000 0000000 00000047746 14620377726 014222  0                                                                                                    ustar   root                            root                                                                                                                                                                                                                   (* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     19712,        575]
+NotebookOptionsPosition[     16224,        508]
+NotebookOutlinePosition[     16629,        524]
+CellTagsIndexPosition[     16586,        521]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{"General", " ", "asymptotic", " ", "expansion"}], " ", 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.9245021866042614`*^9, 3.924502186839735*^9}, {
+  3.9245038911238084`*^9, 
+  3.924503936347022*^9}},ExpressionUUID->"6c57edcf-e4b4-4db6-8727-\
+a967bee17791"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"a_", ",", "n_"}], "]"}], "=", 
+   RowBox[{
+    RowBox[{"(", GridBox[{
+       {"1", "0", "0"},
+       {"3", 
+        RowBox[{"-", "4"}], "1"},
+       {"1", 
+        RowBox[{"-", "2"}], "1"}
+      }], ")"}], ".", 
+    RowBox[{"Transpose", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       FractionBox["1", 
+        RowBox[{"a", " ", "n"}]], ",", 
+       FractionBox["1", 
+        RowBox[{
+         RowBox[{"a", " ", "n"}], "+", "1"}]], ",", 
+       FractionBox["1", 
+        RowBox[{
+         RowBox[{"a", " ", "n"}], "+", "2"}]]}], "}"}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"MatrixForm", "[", 
+  RowBox[{"Series", "[", 
+   RowBox[{
+    RowBox[{"f", "[", 
+     RowBox[{"a", ",", "n"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "\[Infinity]", ",", "3"}], "}"}]}], "]"}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.9245037297213264`*^9, 3.9245037765000453`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"590735f4-07fa-4b54-b44d-bd654499ac84"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", 
+   TagBox[GridBox[{
+      {
+       InterpretationBox[
+        RowBox[{
+         FractionBox["1", 
+          RowBox[{"a", " ", "n"}]], "+", 
+         InterpretationBox[
+          SuperscriptBox[
+           RowBox[{"O", "[", 
+            FractionBox["1", "n"], "]"}], "4"],
+          SeriesData[$CellContext`n, 
+           DirectedInfinity[1], {}, 1, 4, 1],
+          Editable->False]}],
+        SeriesData[$CellContext`n, 
+         DirectedInfinity[1], {$CellContext`a^(-1)}, 1, 4, 1],
+        Editable->False]},
+      {
+       InterpretationBox[
+        RowBox[{
+         FractionBox["2", 
+          RowBox[{
+           SuperscriptBox["a", "2"], " ", 
+           SuperscriptBox["n", "2"]}]], "+", 
+         InterpretationBox[
+          SuperscriptBox[
+           RowBox[{"O", "[", 
+            FractionBox["1", "n"], "]"}], "4"],
+          SeriesData[$CellContext`n, 
+           DirectedInfinity[1], {}, 2, 4, 1],
+          Editable->False]}],
+        SeriesData[$CellContext`n, 
+         DirectedInfinity[1], {2 $CellContext`a^(-2)}, 2, 4, 1],
+        Editable->False]},
+      {
+       InterpretationBox[
+        RowBox[{
+         FractionBox["2", 
+          RowBox[{
+           SuperscriptBox["a", "3"], " ", 
+           SuperscriptBox["n", "3"]}]], "+", 
+         InterpretationBox[
+          SuperscriptBox[
+           RowBox[{"O", "[", 
+            FractionBox["1", "n"], "]"}], "4"],
+          SeriesData[$CellContext`n, 
+           DirectedInfinity[1], {}, 3, 4, 1],
+          Editable->False]}],
+        SeriesData[$CellContext`n, 
+         DirectedInfinity[1], {2 $CellContext`a^(-3)}, 3, 4, 1],
+        Editable->False]}
+     },
+     GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.5599999999999999]}, 
+         Offset[0.27999999999999997`]}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}}],
+    Column], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.924503751571725*^9, 3.9245037772874994`*^9}, 
+   3.924506272303831*^9, 3.9245078838866377`*^9},
+ CellLabel->
+  "Out[2]//MatrixForm=",ExpressionUUID->"7d15b933-041b-48db-ab8c-\
+13cf1c3c2920"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{"Arithmetic", " ", "identities"}], ",", " ", 
+   RowBox[{
+   "1", "st", " ", "pair", " ", "of", " ", "sets", " ", "of", " ", 
+    "numbers"}]}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.9245021897216296`*^9, 
+  3.9245022184601545`*^9}},ExpressionUUID->"b8eb8f63-5831-4ee1-9a6f-\
+b4d5eb3daaf5"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox["1", "10"], "+", 
+   FractionBox["1", "30"], "+", 
+   FractionBox["1", "60"]}], "==", 
+  RowBox[{
+   FractionBox["1", "12"], "+", 
+   FractionBox["1", "15"]}]}]], "Input",
+ CellChangeTimes->{{3.9241014343125896`*^9, 3.9241014547561264`*^9}, {
+  3.9245030073437643`*^9, 3.924503012538251*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"f83b8568-5880-40e1-b77a-d9ec31d15a7e"],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.924101456556897*^9, 3.924503013088184*^9, 
+  3.9245032977647276`*^9, 3.924506281069021*^9, 3.924507887088129*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"f5517c21-e2fe-4966-94ac-c0ae8e7f734a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox["1", 
+    RowBox[{"10", "^", "2"}]], "+", 
+   FractionBox["1", 
+    RowBox[{"30", "^", "2"}]], "+", 
+   FractionBox["1", 
+    RowBox[{"60", "^", "2"}]]}], "==", 
+  RowBox[{
+   FractionBox["1", 
+    RowBox[{"12", "^", "2"}]], "+", 
+   FractionBox["1", 
+    RowBox[{"15", "^", "2"}]]}]}]], "Input",
+ CellChangeTimes->{{3.9241014663203087`*^9, 3.9241014774132547`*^9}, {
+  3.924502252914384*^9, 3.924502261362482*^9}, {3.924502991876701*^9, 
+  3.9245030028156414`*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"1cb337ff-d972-4f9f-8431-d93861585a25"],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.9241014787215867`*^9, 3.924502261990306*^9, 
+  3.92450300391391*^9, 3.924503302354519*^9, 3.9245062833939047`*^9, 
+  3.924507890545743*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"ff06c9b9-1b10-4b66-bfd0-c3cff1d72664"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["2", 
+   RowBox[{"7", "^", "3"}]], 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{"10", "^", "3"}]], "+", 
+      FractionBox["1", 
+       RowBox[{"30", "^", "3"}]], "+", 
+      FractionBox["1", 
+       RowBox[{"60", "^", "3"}]]}], ")"}], "-", 
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{"12", "^", "3"}]], "+", 
+      FractionBox["1", 
+       RowBox[{"15", "^", "3"}]]}], ")"}]}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.924502241130335*^9, 3.9245022417908993`*^9}, {
+  3.9245029238599405`*^9, 3.9245029872533755`*^9}, {3.924503822414179*^9, 
+  3.9245038361753964`*^9}, {3.9245066132052298`*^9, 3.9245066137076626`*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"49fa6fb3-a1ce-4d96-bde4-dfa11ce918fa"],
+
+Cell[BoxData[
+ FractionBox["1", "1029000"]], "Output",
+ CellChangeTimes->{{3.9245029332278805`*^9, 3.9245029878656435`*^9}, 
+   3.9245033046486807`*^9, 3.924503837495903*^9, 3.924506285437131*^9, 
+   3.9245066147449355`*^9, 3.924507895925499*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"64fd1ce7-32bb-4d11-acd6-1eee0cd03978"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{"Arithmetic", " ", "identities"}], ",", " ", 
+   RowBox[{
+   "2", "nd", " ", "pair", " ", "of", " ", "sets", " ", "of", " ", 
+    "numbers"}]}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.92450224409972*^9, 3.9245022445866547`*^9}, {
+  3.924503028088001*^9, 
+  3.9245030318121877`*^9}},ExpressionUUID->"bb52840d-873d-4323-8365-\
+a54a9f1ca660"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox["1", "16"], "+", 
+   FractionBox["1", "20"], "+", 
+   FractionBox["1", "240"]}], "==", 
+  RowBox[{
+   FractionBox["1", "15"], "+", 
+   FractionBox["1", "24"], "+", 
+   FractionBox["1", "120"]}]}]], "Input",
+ CellChangeTimes->{{3.924185382669819*^9, 3.924185448915016*^9}, {
+  3.9245031538918877`*^9, 3.9245031601572294`*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"2cd489fd-3389-472d-bf83-c4f3b4ab6d38"],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{
+  3.9241853145095477`*^9, 3.9241853845845203`*^9, {3.924185425272747*^9, 
+   3.9241854498882947`*^9}, 3.9241855854188128`*^9, 3.9241919757601404`*^9, 
+   3.924503161177285*^9, {3.924503323173194*^9, 3.924503334248871*^9}, 
+   3.924506299880971*^9, 3.9245078981287565`*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"04b0c633-f97c-4783-ae92-3463f934cc57"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox["1", 
+    RowBox[{"16", "^", "3"}]], "+", 
+   FractionBox["1", 
+    RowBox[{"20", "^", "3"}]], "+", 
+   FractionBox["1", 
+    RowBox[{"240", "^", "3"}]]}], "==", 
+  RowBox[{
+   FractionBox["1", 
+    RowBox[{"15", "^", "3"}]], "+", 
+   FractionBox["1", 
+    RowBox[{"24", "^", "3"}]], "+", 
+   FractionBox["1", 
+    RowBox[{"120", "^", "3"}]]}]}]], "Input",
+ CellChangeTimes->{{3.9245031452006655`*^9, 3.9245031503415594`*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"45279e0d-4e09-4a63-9d2c-e413318d439c"],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.9241854519777365`*^9, 3.9241855876203237`*^9, 
+  3.9241919795793014`*^9, 3.924503150938094*^9, 3.9245033364941225`*^9, 
+  3.924506304252799*^9, 3.9245079029633837`*^9},
+ CellLabel->"Out[7]=",ExpressionUUID->"13ede39b-1571-44ef-8b8f-babccbbd18aa"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["2", 
+   RowBox[{"11", "^", "2"}]], 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{"16", "^", "2"}]], "+", 
+      FractionBox["1", 
+       RowBox[{"20", "^", "2"}]], "+", 
+      FractionBox["1", 
+       RowBox[{"240", "^", "2"}]]}], ")"}], "-", 
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{"15", "^", "2"}]], "+", 
+      FractionBox["1", 
+       RowBox[{"24", "^", "2"}]], "+", 
+      FractionBox["1", 
+       RowBox[{"120", "^", "2"}]]}], ")"}]}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.92450307324306*^9, 3.9245031074331512`*^9}, {
+  3.9245040578633*^9, 3.924504070648223*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"c9528c9c-8685-4542-a195-ab6f9c61d3b0"],
+
+Cell[BoxData[
+ FractionBox["1", "348480"]], "Output",
+ CellChangeTimes->{{3.9245030864305677`*^9, 3.9245031082283583`*^9}, 
+   3.9245033399656925`*^9, 3.924504071796711*^9, 3.924506314563423*^9, 
+   3.9245079052889385`*^9},
+ CellLabel->"Out[8]=",ExpressionUUID->"fa1b6135-6def-4b25-a491-cda1a93324cd"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{"Arithmetic", " ", "identities"}], ",", " ", 
+   RowBox[{
+   "3", "rd", " ", "pair", " ", "of", " ", "sets", " ", "of", " ", 
+    "numbers"}]}], " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.9245024825212383`*^9, 3.924502484226227*^9}, {
+  3.9245025455776405`*^9, 
+  3.9245025498105445`*^9}},ExpressionUUID->"4926d8c9-a1bb-48c9-a52e-\
+7aba2cf9d34a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox["1", 
+    RowBox[{"45", "^", "2"}]], "+", 
+   FractionBox["1", 
+    RowBox[{"72", "^", "2"}]], "+", 
+   FractionBox["1", 
+    RowBox[{"144", "^", "2"}]], "+", 
+   FractionBox["1", 
+    RowBox[{"160", "^", "2"}]], "+", 
+   FractionBox["1", 
+    RowBox[{"432", "^", "2"}]], "+", 
+   FractionBox["1", 
+    RowBox[{"480", "^", "2"}]]}], "==", 
+  RowBox[{
+   FractionBox["1", 
+    RowBox[{"48", "^", "2"}]], "+", 
+   FractionBox["1", 
+    RowBox[{"60", "^", "2"}]], "+", 
+   FractionBox["1", 
+    RowBox[{"120", "^", "2"}]], "+", 
+   FractionBox["1", 
+    RowBox[{"720", "^", "2"}]], "+", 
+   FractionBox["1", 
+    RowBox[{"1440", "^", "2"}]], "+", 
+   FractionBox["1", 
+    RowBox[{"4320", "^", "2"}]]}]}]], "Input",
+ CellChangeTimes->{{3.924502554138551*^9, 3.9245025936570616`*^9}, {
+  3.9245026610177975`*^9, 3.9245027073697896`*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"88df4b99-3bfa-4636-857e-142d8490c0ba"],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.924502708455665*^9, 3.924502819904237*^9, 
+  3.924502906411072*^9, 3.924503392348658*^9, 3.9245063174380155`*^9, 
+  3.924507909971834*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"a52b70d1-6302-4135-8bda-4495d47b4949"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox["1", 
+    RowBox[{"45", "^", "3"}]], "+", 
+   FractionBox["1", 
+    RowBox[{"72", "^", "3"}]], "+", 
+   FractionBox["1", 
+    RowBox[{"144", "^", "3"}]], "+", 
+   FractionBox["1", 
+    RowBox[{"160", "^", "3"}]], "+", 
+   FractionBox["1", 
+    RowBox[{"432", "^", "3"}]], "+", 
+   FractionBox["1", 
+    RowBox[{"480", "^", "3"}]]}], "==", 
+  RowBox[{
+   FractionBox["1", 
+    RowBox[{"48", "^", "3"}]], "+", 
+   FractionBox["1", 
+    RowBox[{"60", "^", "3"}]], "+", 
+   FractionBox["1", 
+    RowBox[{"120", "^", "3"}]], "+", 
+   FractionBox["1", 
+    RowBox[{"720", "^", "3"}]], "+", 
+   FractionBox["1", 
+    RowBox[{"1440", "^", "3"}]], "+", 
+   FractionBox["1", 
+    RowBox[{"4320", "^", "3"}]]}]}]], "Input",
+ CellChangeTimes->{{3.9245027225338645`*^9, 3.924502729012*^9}, {
+  3.924502790872117*^9, 3.9245028162178974`*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"d9777c2e-1ca5-4902-956f-4f368581952c"],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.924502817052346*^9, 3.924502821930621*^9}, 
+   3.9245029084707403`*^9, 3.9245033944388742`*^9, 3.9245063213630714`*^9, 
+   3.9245079142953396`*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"d2731514-f63f-4f8b-af12-e9db541b7de8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    FractionBox["1", "45"], "+", 
+    FractionBox["1", "72"], "+", 
+    FractionBox["1", "144"], "+", 
+    FractionBox["1", "160"], "+", 
+    FractionBox["1", "432"], "+", 
+    FractionBox["1", "480"]}], ")"}], "-", 
+  RowBox[{"(", 
+   RowBox[{
+    FractionBox["1", "48"], "+", 
+    FractionBox["1", "60"], "+", 
+    FractionBox["1", "120"], "+", 
+    FractionBox["1", "720"], "+", 
+    FractionBox["1", "1440"], "+", 
+    FractionBox["1", "4320"]}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.9245026052290516`*^9, 3.924502642332879*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"26e2a9fd-52dd-405d-b60f-5533b93570f6"],
+
+Cell[BoxData[
+ FractionBox["1", "180"]], "Output",
+ CellChangeTimes->{3.9245026431065593`*^9, 3.924502823955678*^9, 
+  3.924502910575723*^9, 3.924503410906722*^9, 3.9245063239720116`*^9, 
+  3.924507922089718*^9},
+ CellLabel->"Out[11]=",ExpressionUUID->"cca66733-0f66-4adf-ba04-d2bef2372cd0"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+  "Product", " ", "of", " ", "involved", " ", "prime", " ", "factors"}], " ", 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.924504216179907*^9, 3.9245042344726534`*^9}},
+ CellLabel->
+  "In[120]:=",ExpressionUUID->"5258c96d-42a0-4510-b371-04fd2ddc64e3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"2", "*", "3", "*", "5", "*", "7", "*", "11"}]], "Input",
+ CellChangeTimes->{{3.9245042399300704`*^9, 3.924504248174365*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"cf73c568-99e7-4ea1-8682-01a361cc1925"],
+
+Cell[BoxData["2310"], "Output",
+ CellChangeTimes->{3.924504248992049*^9, 3.9245063294547405`*^9, 
+  3.9245079313005247`*^9},
+ CellLabel->"Out[12]=",ExpressionUUID->"d175be16-22b8-43ff-9fae-eb9d7b26253d"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", "Determinant", " ", "*)"}]], "Input",
+ CellChangeTimes->{{3.9245063340452557`*^9, 
+  3.9245063421088705`*^9}},ExpressionUUID->"bb5312f8-46a7-4cdb-aa78-\
+92e472d3476b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Det", "[", 
+  RowBox[{"(", GridBox[{
+     {"1", "0", "0"},
+     {"3", 
+      RowBox[{"-", "4"}], "1"},
+     {"1", 
+      RowBox[{"-", "2"}], "1"}
+    }], ")"}], "]"}]], "Input",
+ CellChangeTimes->{{3.9245063464166913`*^9, 3.9245063601438446`*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"fe2364a4-0ea1-4f34-b4b3-569ecee048c5"],
+
+Cell[BoxData[
+ RowBox[{"-", "2"}]], "Output",
+ CellChangeTimes->{3.9245063609986277`*^9, 3.9245079335469556`*^9},
+ CellLabel->"Out[13]=",ExpressionUUID->"acebbf73-3f0f-4bac-b439-1e500e36d211"]
+}, Open  ]]
+},
+WindowSize->{626.5, 427.},
+WindowMargins->{{7.5, Automatic}, {Automatic, 22}},
+FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"ce1ec4b4-9c45-443a-a041-ecb339aa27f1"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 299, 7, 28, "Input",ExpressionUUID->"6c57edcf-e4b4-4db6-8727-a967bee17791"],
+Cell[CellGroupData[{
+Cell[882, 31, 1036, 34, 84, "Input",ExpressionUUID->"590735f4-07fa-4b54-b44d-bd654499ac84"],
+Cell[1921, 67, 2321, 69, 103, "Output",ExpressionUUID->"7d15b933-041b-48db-ab8c-13cf1c3c2920"]
+}, Open  ]],
+Cell[4257, 139, 354, 9, 28, "Input",ExpressionUUID->"b8eb8f63-5831-4ee1-9a6f-b4d5eb3daaf5"],
+Cell[CellGroupData[{
+Cell[4636, 152, 420, 11, 45, "Input",ExpressionUUID->"f83b8568-5880-40e1-b77a-d9ec31d15a7e"],
+Cell[5059, 165, 244, 3, 32, "Output",ExpressionUUID->"f5517c21-e2fe-4966-94ac-c0ae8e7f734a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5340, 173, 594, 17, 45, "Input",ExpressionUUID->"1cb337ff-d972-4f9f-8431-d93861585a25"],
+Cell[5937, 192, 270, 4, 32, "Output",ExpressionUUID->"ff06c9b9-1b10-4b66-bfd0-c3cff1d72664"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6244, 201, 818, 23, 45, "Input",ExpressionUUID->"49fa6fb3-a1ce-4d96-bde4-dfa11ce918fa"],
+Cell[7065, 226, 324, 5, 48, "Output",ExpressionUUID->"64fd1ce7-32bb-4d11-acd6-1eee0cd03978"]
+}, Open  ]],
+Cell[7404, 234, 402, 10, 28, "Input",ExpressionUUID->"bb52840d-873d-4323-8365-a54a9f1ca660"],
+Cell[CellGroupData[{
+Cell[7831, 248, 453, 12, 45, "Input",ExpressionUUID->"2cd489fd-3389-472d-bf83-c4f3b4ab6d38"],
+Cell[8287, 262, 402, 6, 32, "Output",ExpressionUUID->"04b0c633-f97c-4783-ae92-3463f934cc57"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8726, 273, 554, 17, 45, "Input",ExpressionUUID->"45279e0d-4e09-4a63-9d2c-e413318d439c"],
+Cell[9283, 292, 299, 4, 32, "Output",ExpressionUUID->"13ede39b-1571-44ef-8b8f-babccbbd18aa"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9619, 301, 777, 24, 45, "Input",ExpressionUUID->"c9528c9c-8685-4542-a195-ab6f9c61d3b0"],
+Cell[10399, 327, 301, 5, 48, "Output",ExpressionUUID->"fa1b6135-6def-4b25-a491-cda1a93324cd"]
+}, Open  ]],
+Cell[10715, 335, 405, 10, 28, "Input",ExpressionUUID->"4926d8c9-a1bb-48c9-a52e-7aba2cf9d34a"],
+Cell[CellGroupData[{
+Cell[11145, 349, 961, 30, 83, "Input",ExpressionUUID->"88df4b99-3bfa-4636-857e-142d8490c0ba"],
+Cell[12109, 381, 269, 4, 32, "Output",ExpressionUUID->"a52b70d1-6302-4135-8bda-4495d47b4949"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12415, 390, 957, 30, 83, "Input",ExpressionUUID->"d9777c2e-1ca5-4902-956f-4f368581952c"],
+Cell[13375, 422, 280, 4, 32, "Output",ExpressionUUID->"d2731514-f63f-4f8b-af12-e9db541b7de8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13692, 431, 668, 19, 45, "Input",ExpressionUUID->"26e2a9fd-52dd-405d-b60f-5533b93570f6"],
+Cell[14363, 452, 291, 5, 48, "Output",ExpressionUUID->"cca66733-0f66-4adf-ba04-d2bef2372cd0"]
+}, Open  ]],
+Cell[14669, 460, 295, 7, 28, "Input",ExpressionUUID->"5258c96d-42a0-4510-b371-04fd2ddc64e3"],
+Cell[CellGroupData[{
+Cell[14989, 471, 227, 3, 28, "Input",ExpressionUUID->"cf73c568-99e7-4ea1-8682-01a361cc1925"],
+Cell[15219, 476, 203, 3, 32, "Output",ExpressionUUID->"d175be16-22b8-43ff-9fae-eb9d7b26253d"]
+}, Open  ]],
+Cell[15437, 482, 201, 4, 28, "Input",ExpressionUUID->"bb5312f8-46a7-4cdb-aa78-92e472d3476b"],
+Cell[CellGroupData[{
+Cell[15663, 490, 350, 10, 61, "Input",ExpressionUUID->"fe2364a4-0ea1-4f34-b4b3-569ecee048c5"],
+Cell[16016, 502, 192, 3, 54, "Output",ExpressionUUID->"acebbf73-3f0f-4bac-b439-1e500e36d211"]
+}, Open  ]]
+}
+]
+*)
+
+                          harmonicsubseries.bbl                                                                               0000664 0000000 0000000 00000000742 14620377706 014003  0                                                                                                    ustar   root                            root                                                                                                                                                                                                                   \begin{thebibliography}{1}
+
+\bibitem{EP}
+Thomas Bloom.
+\newblock {Erd\H{o}s} problems.
+\newblock \url{https://www.erdosproblems.com/}.
+\newblock Accessed: May 12, 2024.
+
+\bibitem{EG80}
+Paul Erd\H{o}s and Ronald~Lewis Graham.
+\newblock {\em Old and new problems and results in combinatorial number theory}, volume~28 of {\em Monographies de L'Enseignement Math\'{e}matique}.
+\newblock Universit\'{e} de Gen\`eve, L'Enseignement Math\'{e}matique, Geneva, 1980.
+
+\end{thebibliography}
+                              harmonicsubseries.bib                                                                               0000664 0000000 0000000 00000001151 14620377672 013775  0                                                                                                    ustar   root                            root                                                                                                                                                                                                                   @book {EG80,
+    AUTHOR = {Erd\H{o}s, Paul and Graham, Ronald Lewis},
+     TITLE = {Old and new problems and results in combinatorial number theory},
+    SERIES = {Monographies de L'Enseignement Math\'{e}matique},
+    VOLUME = {28},
+ PUBLISHER = {Universit\'{e} de Gen\`eve, L'Enseignement Math\'{e}matique, Geneva},
+      YEAR = {1980},
+     PAGES = {128},
+   MRCLASS = {10-02 (05-02)},
+  MRNUMBER = {592420},
+MRREVIEWER = {L.\ C.\ Eggan},
+}
+
+@misc {EP,
+    author = {Bloom, Thomas},
+    title = {{Erd\H{o}s} problems},
+    howpublished = {\url{https://www.erdosproblems.com/}},
+    note = {Accessed: May 12, 2024}
+}                                                                                                                                                                                                                                                                                                                                                                                                                       harmonicsubseries.tex                                                                               0000664 0000000 0000000 00000045647 14620400737 014050  0                                                                                                    ustar   root                            root                                                                                                                                                                                                                   \documentclass[11pt,letterpaper,reqno]{amsart}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{bbm}
+\usepackage{doi}
+
+\addtolength{\hoffset}{-1.5cm}\addtolength{\textwidth}{3cm}
+\addtolength{\voffset}{-1cm}\addtolength{\textheight}{2cm}
+
+\usepackage{bookmark}
+\usepackage{hyperref}
+\hypersetup{pdfstartview={FitH}}
+
+%\usepackage{refcheck}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{claim}{Claim}
+
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\le}{\leqslant}
+\renewcommand{\ge}{\geqslant}
+
+\newcommand{\R}{\mathbb{R}}
+%\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+%\newcommand{\ii}{\mathbbm{i}}
+
+%\newcommand{\comment}[1]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\title[On the set of points represented by harmonic subseries]{On the set of points represented by harmonic subseries}
+
+\author[Vjekoslav Kova\v{c}]{Vjekoslav Kova\v{c}}
+
+\address{Department of Mathematics, Faculty of Science, University of Zagreb, Bijeni\v{c}ka cesta 30, 10000 Zagreb, Croatia}
+
+\email{vjekovac@math.hr}
+
+%\date{\today}
+
+\subjclass[2020]{
+Primary
+11B75; %Sequences and sets - Other combinatorial number theory
+Secondary
+11D68, %Diophantine equations - Rational numbers as sums of fractions
+40A05} %Convergence and divergence of series and sequences
+\keywords{harmonic series, unit fraction, number representation, subset sum}
+
+\begin{abstract}
+We show that the set of points
+\[ \Big(\sum_{n\in A}\frac{1}{n}, \sum_{n\in A}\frac{1}{n+1}, \sum_{n\in A}\frac{1}{n+2}\Big), \]
+obtained as $A$ ranges over infinite sets of positive integers, has a non-empty interior.
+This answers in the affirmative a question of Erd\H{o}s and Straus (posed in a 1980 problem book by Erd\H{o}s and Graham).
+\end{abstract}
+
+\maketitle
+
+%\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+Paul Erd\H{o}s asked numerous questions on representations of numbers as finite or infinite sums of distinct unit fractions; see \cite[\S4,6,7]{EG80} and \cite{EP}. Over the years many of these problems have been solved and, more importantly, have motivated the development of new techniques in number theory and combinatorics. 
+The problem that we study in this note is distinctly higher-dimensional and its solution will use virtually no ingredients from number theory, apart from a few funny-looking numerical identities stated in Section \ref{sec:arithmetic} below.
+
+Erd\H{o}s and Graham, in their 1980 monograph on open problems in combinatorial number theory \cite{EG80}, mentioned that
+\begin{quote}
+\emph{Erd\H{o}s and Straus [unpublished] proved that if one takes all sequences of integers $a_1,a_2,\ldots$, with $\sum_k 1/a_k < \infty$, then the set
+\[ \Big\{ (x,y) \,:\, x=\sum_k\frac{1}{a_k},\ y=\sum_k\frac{1}{1+a_k} \Big\} \]
+contains a [non-empty] open set;} \cite[p.~65]{EG80}.
+\end{quote}
+It is also understood from the context that the sequence $(a_k)$ is meant to be positive and strictly increasing. (Indeed, allowing the repetition of $a_k$'s would make this result and the following one significantly less challenging.) 
+Erd\H{o}s and Graham then asked \cite[p.~65]{EG80}:
+\begin{quote}
+\emph{Is the same true in three (or more) dimensions, e.g., taking all $(x,y,z)$ with
+\[ x=\sum_k\frac{1}{a_k},\ y=\sum_k\frac{1}{1+a_k},\ z=\sum_k\frac{1}{2+a_k} ? \]}
+\end{quote}
+We can give the positive answer to this three-dimensional problem, which has also been posed on Thomas Bloom's website \emph{Erd\H{o}s problems} \cite[Problem \#268]{EP}.
+We state our theorem in the spirit of Bloom's equivalent reformulation of the problem.
+
+\begin{theorem}\label{thm:main}
+The set
+\[ \bigg\{ \Big(\sum_{n\in A}\frac{1}{n}, \sum_{n\in A}\frac{1}{n+1}, \sum_{n\in A}\frac{1}{n+2}\Big) \,:\, A\subset\N \text{ is an infinite set with } \sum_{n\in A}\frac{1}{n}<\infty \bigg\} \subseteq \R^3 \]
+has a non-empty interior.
+\end{theorem}
+
+Here $\N$ denotes the set of all positive integers.
+Theorem \ref{thm:main} clearly implies the aforementioned unpublished two-dimensional result of Erd\H{o}s and Straus, but we are currently unable to say anything about dimensions larger than $3$.
+
+The basic idea of our proof is to construct disjoint finite sets $S_j,T_j\subset\N$, for each of the coordinates $j=1,2,3$, such that replacing the (shifted harmonic) series' terms corresponding to indices $n T_j$ by those corresponding to $n S_j$, for some $n\in\N$, increases the series' sum in the $j$-th coordinate by $c_j n^{-j}$, up to an $O(n^{-4})$ error in each of the coordinates.
+This is achieved after an appropriate linear change of variables that enables the desired asymptotics and after the specification of desired arithmetic constraints on $S_j$ and $T_j$.
+Next, we only pick certain positive integers $n$ for which we know that all of the considered harmonic series' terms are mutually different. 
+By choosing $n$ from a sequence that grows roughly like perfect squares we also make all discussed sums convergent.
+Then we define the point $p=(p_1,p_2,p_3)$ by summing the three series over the set $\cup_n \cup_j n T_j$.
+For every point $q=(q_1,q_2,q_3)$ in a small rectangular box ``a little bit right'' from $p$, we describe an algorithm that makes a sequence of replacements of $n T_j$ with $n S_j$, for one $n$ at a time, in order to gradually ``move'' the triple of series' sums from $p$ to $q$ and finally obtain $q$ in the limit. 
+
+The arithmetic of $\N$ comes into play only when we need to guarantee that such sets $S_j,T_j$ can really be constructed.
+For example, we need to find two finite sets of distinct unit fractions with mutually equal sums of squares and sums of cubes, which calls for a combination of heuristics and computer search.
+
+%%%%%
+
+\section{An arithmetic lemma}
+\label{sec:arithmetic}
+As we have already announced, the only arithmetic property of the positive integers needed in the proof is encoded in the following auxiliary result.
+
+\begin{lemma}\label{lm:arithmetic}
+There exist a matrix $M\in\textup{GL}(3,\R)$, mutually disjoint finite sets $S_1$, $S_2$, $S_3$, $T_1$, $T_2$, $T_3\subset\N$, and constants $c_1,c_2,c_3\in(0,\infty)$ such that
+\begin{equation}\label{eq:matrix}
+\Big( \sum_{a\in S_j} - \sum_{a\in T_j} \Big) M \begin{pmatrix} 1/(a n) \\ 1/(a n + 1) \\ 1/(a n + 2) \end{pmatrix}
+= \frac{c_j}{n^j}\mathbbm{e}_j + O\Big(\frac{1}{n^{4}}\Big)
+\end{equation}
+for $1\leq j\leq 3$.
+\end{lemma}
+
+Here $\mathbbm{e}_1,\mathbbm{e}_2,\mathbbm{e}_3$ denotes the standard basis of $\R^3$.
+It will always be more convenient to write points and vectors in $\R^3$ as $3\times 1$ columns.
+
+\begin{proof}[Proof of Lemma \ref{lm:arithmetic}]
+Property \eqref{eq:matrix} relies on the expansions
+\[ \frac{1}{a n + k - 1} = \frac{1}{a n} - \frac{k-1}{a^2 n^2} + \frac{(k-1)^2}{a^3 n^3} + O\Big(\frac{1}{n^4}\Big), \]
+for $1\leq k\leq 3$, where the error terms are allowed to depend on a parameter $a\in\N$. 
+If we choose
+\[ M = \begin{pmatrix} 1 & 0 & 0 \\ 3 & -4 & 1 \\ 1 & -2 & 1 \end{pmatrix}, \]
+then
+\[ M \begin{pmatrix} \frac{1}{a n} \\[1mm] \frac{1}{a n + 1} \\[1mm] \frac{1}{a n + 2} \end{pmatrix}
+= \begin{pmatrix} \frac{1}{a n} + O(\frac{1}{n^4}) \\[1mm] \frac{2}{a^2 n^2} + O(\frac{1}{n^4}) \\[1mm] \frac{2}{a^3 n^3} + O(\frac{1}{n^4}) \end{pmatrix}. \]
+Thus, to construct (say) $S_3$ and $T_3$, we need to make sure that
+\[ \sum_{a\in S_3} \frac{1}{a} = \sum_{a\in T_3} \frac{1}{a},\qquad \sum_{a\in S_3} \frac{1}{a^2} = \sum_{a\in T_3} \frac{1}{a^2},\qquad \sum_{a\in S_3} \frac{1}{a^3} \neq \sum_{a\in T_3} \frac{1}{a^3}. \]
+The only remaining ingredients of the proof are then elementary identities
+\begin{align*}
+\frac{1}{10}+\frac{1}{30}+\frac{1}{60} & = \frac{1}{12}+\frac{1}{15}, \\
+\frac{1}{10^2}+\frac{1}{30^2}+\frac{1}{60^2} & = \frac{1}{12^2}+\frac{1}{15^2}, \\
+\frac{1}{16}+\frac{1}{20}+\frac{1}{240} & = \frac{1}{15}+\frac{1}{24}+\frac{1}{120}, \\
+\frac{1}{16^3}+\frac{1}{20^3}+\frac{1}{240^3} & = \frac{1}{15^3}+\frac{1}{24^3}+\frac{1}{120^3}, \\
+\frac{1}{45^2}+\frac{1}{72^2}+\frac{1}{144^2}+\frac{1}{160^2}+\frac{1}{432^2}+\frac{1}{480^2} & =
+\frac{1}{48^2}+\frac{1}{60^2}+\frac{1}{120^2}+\frac{1}{720^2}+\frac{1}{1440^2}+\frac{1}{4320^2}, \\
+\frac{1}{45^3}+\frac{1}{72^3}+\frac{1}{144^3}+\frac{1}{160^3}+\frac{1}{432^3}+\frac{1}{480^3} & = 
+\frac{1}{48^3}+\frac{1}{60^3}+\frac{1}{120^3}+\frac{1}{720^3}+\frac{1}{1440^3}+\frac{1}{4320^3}. 
+\end{align*}
+Straightforward (preferably computer assisted) computation then verifies \eqref{eq:matrix} with
+\begin{align*}
+S_1 = \{45, 72, 144, 160, 432, 480\}, & \qquad T_1 = \{48, 60, 120, 720, 1440, 4320\}, \\
+S_2 = 11\cdot \{16, 20, 240\}, & \qquad T_2 = 11\cdot \{15, 24, 120\}, \\
+S_3 = 7\cdot \{10, 30, 60\}, & \qquad T_3 = 7\cdot \{12, 15\}
+\end{align*}
+and
+\begin{align*}
+c_1 & = \frac{1}{45}+\frac{1}{72}+\frac{1}{144}+\frac{1}{160}+\frac{1}{432}+\frac{1}{480} 
+-\frac{1}{48}-\frac{1}{60}-\frac{1}{120}-\frac{1}{720}-\frac{1}{1440}-\frac{1}{4320} = \frac{1}{180}, \\ 
+c_2 & = \frac{2}{11^2} \Big( \frac{1}{16^2}+\frac{1}{20^2}+\frac{1}{240^2} -\frac{1}{15^2}-\frac{1}{24^2}-\frac{1}{120^2} \Big) = \frac{1}{348480}, \\
+c_3 & = \frac{2}{7^3} \Big( \frac{1}{10^3}+\frac{1}{30^3}+\frac{1}{60^3} -\frac{1}{12^3}-\frac{1}{15^3} \Big) = \frac{1}{1029000}. 
+\end{align*}
+The matrix $M$ is regular since $\det M=-2$.
+\end{proof}
+
+Our application of Lemma \ref{lm:arithmetic} in the proof below does not use that the sets $S_j$ and $T_j$ are finite: they could just have finitely many prime factors.
+
+%%%%%
+
+\section{Proof of Theorem \ref{thm:main}}
+Let $m$ be the product of all prime factors of the numbers in the set 
+\[ U := S_1\cup S_2\cup S_3\cup T_1\cup T_2\cup T_3. \]
+The proof of Lemma \ref{lm:arithmetic} actually gives 
+\[ m = 2\cdot 3\cdot 5\cdot 7\cdot 11 = 2310. \] 
+Every positive integer has at most one representation as $a(k^2 m+1)$ for $a\in U$ and $k\in\N$.
+The series
+\[ \sum_{\substack{a\in U\\k\in\N}} \frac{1}{a(k^2 m+1)},\quad \sum_{\substack{a\in U\\k\in\N}} \frac{1}{a(k^2 m+1)+1},\quad \sum_{\substack{a\in U\\k\in\N}} \frac{1}{a(k^2 m+1)+2} \]
+converge, so even after multiplying their terms arbitrarily by $-1$, $0$, or $1$, we obtain absolutely convergent series, the terms of which can be freely permuted and grouped.
+Let $C\in(0,\infty)$ be a constant such that each component of the vector
+\[ \Big( \sum_{a\in S_j} - \sum_{a\in T_j} \Big) M \begin{pmatrix} 1/(a n) \\ 1/(a n + 1) \\ 1/(a n + 2) \end{pmatrix}
+- \frac{c_j}{n^j}\mathbbm{e}_j \]
+is at most $C/n^4$ in the absolute value, for every $n\in\N$ and every $1\leq j\leq 3$; it exists by Lemma \ref{lm:arithmetic}.
+Next, let $K$ be a sufficiently large positive integer such that
+\begin{align}
+\underbrace{\sum_{l=k}^{\infty} \frac{3C}{(l^2 m+1)^4}}_{\Theta(k^{-7})} & < \underbrace{\frac{c_j}{(k^2 m+1)^j}}_{\Omega(k^{-6})}, \label{eq:propK1} \\
+\underbrace{\sum_{l=k+1}^{\infty} \frac{c_j}{(l^2 m+1)^j}}_{\Theta(k^{-2j+1})} & > \underbrace{\frac{4c_j}{(k^2 m+1)^j}}_{\Theta(k^{-2j})} \label{eq:propK2}
+\end{align}
+both hold for every $k\geq K$ and $1\leq j\leq 3$.
+Introduce the particular point
+\[ p = \begin{pmatrix} p_1 \\ p_2 \\ p_3 \end{pmatrix} := \sum_{l=K}^{\infty} \sum_{j=1}^{3} \sum_{a\in T_j} M \begin{pmatrix} \frac{1}{a(l^2 m+1)} \\[1mm] \frac{1}{a(l^2 m+1)+1} \\[1mm] \frac{1}{a(l^2 m+1)+2} \end{pmatrix} \in \R^3 . \]
+
+For every
+\begin{equation}\label{eq:choiceq}
+q = \begin{pmatrix} q_1 \\ q_2 \\ q_3 \end{pmatrix} \in \mathcal{Q} := p + \prod_{j=1}^{3} \Big[\frac{c_j}{(K^2 m+1)^j}, \frac{2c_j}{(K^2 m+1)^j}\Big] 
+\end{equation}
+we are going to construct a sequence $(x_k)_{k=K}^{\infty}$,
+\[ x_k = \begin{pmatrix} x_{k,1} \\ x_{k,2} \\ x_{k,3} \end{pmatrix} \in \R^3, \]
+that converges to the point $q$.
+We first set $x_K := p$ and then we define recursively
+\[ x_{k+1} := x_k + \sum_{j=1}^{3} \epsilon_{k,j} \Big( \sum_{a\in S_j} - \sum_{a\in T_j} \Big) M \begin{pmatrix} \frac{1}{a(k^2 m+1)} \\[1mm] \frac{1}{a(k^2 m+1)+1} \\[1mm] \frac{1}{a(k^2 m+1)+2} \end{pmatrix} \]
+for every $k\geq K$, where the coefficients $\epsilon_{k,j}\in\{0,1\}$ are determined from
+\begin{align*}
+\epsilon_{k,j} = 1 & \quad\text{if } x_{k,j} + \frac{3c_j}{(k^2 m+1)^j} \leq q_j, \\
+\epsilon_{k,j} = 0 & \quad\text{otherwise}
+\end{align*}
+for $1\leq j\leq 3$.
+From this recurrence relation and the definition of the constant $C$, we have
+\begin{align}
+\text{if } \epsilon_{k,j} = 1, & \quad\text{then } \Big| x_{k+1,j} - x_{k,j} - \frac{c_j}{(k^2 m+1)^j} \Big| \leq \frac{3C}{(k^2 m+1)^4}, \label{eq:rec1} \\
+\text{if } \epsilon_{k,j} = 0, & \quad\text{then } \big| x_{k+1,j} - x_{k,j} \big| \leq \frac{3C}{(k^2 m+1)^4}. \label{eq:rec2}
+\end{align}
+We need two auxiliary claims in the proof that $(x_k)_{k=K}^{\infty}$ really converges to $q$. The main idea is that the sequence was defined to make a step from $x_k$ towards $q$ only if their distance decreases at most by roughly a factor of $1/3$.
+Thus, we are not using an entirely greedy algorithm and we never allow $x_k$ to approach too quickly to its tentative limit $q$ in order to avoid possible overshoots coming from the error terms, either in the current step, or in any of the future steps.
+
+\begin{claim}\label{cl:claim1}
+For each $1\leq j\leq3$ there exist infinitely many $k\geq K$ such that $\epsilon_{k,j}=1$.
+\end{claim}
+
+\begin{proof}[Proof of Claim \ref{cl:claim1}]
+We can immediately rule out the possibility $\epsilon_{k,j}=0$ for each $k\geq K$, as this would imply
+\begin{equation}\label{eq:aux31}
+x_{N,j} + \frac{3c_j}{(N^2 m+1)^j} > q_j \quad\text{for } N\geq K 
+\end{equation}
+and
+\[ x_{k+1,j} \stackrel{\eqref{eq:rec2}}{\leq} x_{k,j} + \frac{3C}{(k^2 m+1)^4} \quad\text{for } k\geq K, \]
+so that
+\begin{equation}\label{eq:aux32}
+x_{N,j} \leq p_j + \sum_{k=K}^{N-1}\frac{3C}{(k^2 m+1)^4} 
+\end{equation}
+for $N>K$.
+A combination of \eqref{eq:aux31} and \eqref{eq:aux32} then yields
+\[ q_j \leq p_j + \sum_{k=K}^{N-1}\frac{3C}{(k^2 m+1)^4} + \frac{3c_j}{(N^2 m+1)^j} \]
+and letting $N\to\infty$ we conclude
+\[ q_j \leq p_j + \sum_{k=K}^{\infty}\frac{3C}{(k^2 m+1)^4} 
+\stackrel{\eqref{eq:propK1}}{<} p_j + \frac{c_j}{(K^2 m+1)^j}, \]
+which contradicts the choice of $q$, namely \eqref{eq:choiceq}.
+
+Similarly, suppose that there exists the largest integer $L\geq K$ such that $\epsilon_{L,j}=1$.
+This means
+\[ x_{L,j} + \frac{3c_j}{(L^2 m+1)^j} \leq q_j \]
+and
+\[ x_{k,j} + \frac{3c_j}{(k^2 m+1)^j} > q_j \quad\text{for } k\geq L+1, \]
+implying
+\begin{equation}\label{eq:aux11}
+x_{N,j} - x_{L,j} \geq \frac{3c_j}{(L^2 m+1)^j} - \frac{3c_j}{(N^2 m+1)^j} 
+\end{equation}
+for every $N>L$.
+As opposed to that, the recurrence relation gives
+\[ |x_{L+1,j} - x_{L,j}| \stackrel{\eqref{eq:rec1}}{\leq} \frac{c_j}{(L^2 m+1)^j} + \frac{3C}{(L^2 m+1)^4} \]
+and
+\[ |x_{k+1,j} - x_{k,j}| \stackrel{\eqref{eq:rec2}}{\leq} \frac{3C}{(k^2 m+1)^4} \quad\text{for } k\geq L+1, \]
+which yields
+\begin{equation}\label{eq:aux12}
+|x_{N,j} - x_{L,j}| \leq \frac{c_j}{(L^2 m+1)^j} + \sum_{k=L}^{N-1} \frac{3C}{(k^2 m+1)^4}
+\stackrel{\eqref{eq:propK1}}{\leq} \frac{2c_j}{(L^2 m+1)^j}.
+\end{equation}
+Note that \eqref{eq:aux11} and \eqref{eq:aux12} together give
+\[ \frac{c_j}{(L^2 m+1)^j} \leq \frac{3c_j}{(N^2 m+1)^j}. \]
+We arrive at a clear contradiction in the limit as $N\to\infty$, so the claim follows.
+\end{proof}
+
+\begin{claim}\label{cl:claim2}
+For each $1\leq j\leq3$ there exist infinitely many $k\geq K$ such that $\epsilon_{k,j}=0$.
+\end{claim}
+
+\begin{proof}[Proof of Claim \ref{cl:claim2}]
+We certainly have $\epsilon_{K,j}=0$ because
+\[ x_{K,j} + \frac{3c_j}{(K^2 m+1)^j} 
+= p_j + \frac{3c_j}{(K^2 m+1)^j} > q_j \]
+by \eqref{eq:choiceq}.
+Suppose that the claim fails and that $L\geq K$ is the largest integer such that $\epsilon_{L,j}=0$.
+We can read this as
+\[ x_{L,j} + \frac{3c_j}{(L^2 m+1)^j} > q_j \]
+and
+\[ x_{k,j} + \frac{3c_j}{(k^2 m+1)^j} \leq q_j \quad\text{for } k\geq L+1. \]
+Thus,
+\begin{equation}\label{eq:aux21}
+x_{N,j} - x_{L,j} \leq \frac{3c_j}{(L^2 m+1)^j}
+\end{equation}
+for every $N>L$.
+The sequence $(x_k)$ has been defined in a way that
+\[ x_{L+1,j} \stackrel{\eqref{eq:rec2}}{\geq} x_{L,j} - \frac{3C}{(L^2 m+1)^4} \]
+and
+\[ x_{k+1,j} \stackrel{\eqref{eq:rec1}}{\geq} x_{k,j} + \frac{c_j}{(k^2 m+1)^j} - \frac{3C}{(k^2 m+1)^4} \quad\text{for } k\geq L+1, \]
+implying
+\begin{align} 
+x_{N,j} - x_{L,j} & \geq \sum_{k=L+1}^{N-1} \frac{c_j}{(k^2 m+1)^j} - \sum_{k=L}^{N-1} \frac{3C}{(k^2 m+1)^4} \nonumber \\
+& \stackrel{\eqref{eq:propK1}}{\geq} \sum_{k=L+1}^{N-1} \frac{c_j}{(k^2 m+1)^j} - \frac{c_j}{(L^2 m+1)^j}. \label{eq:aux22}
+\end{align}
+Combining \eqref{eq:aux21} and \eqref{eq:aux22} we get
+\[ \sum_{k=L+1}^{N-1} \frac{c_j}{(k^2 m+1)^j} \leq \frac{4c_j}{(L^2 m+1)^j}, \]
+so letting $N\to\infty$ we obtain an estimate that contradicts \eqref{eq:propK2}.
+\end{proof}
+
+Now we can return to the proof of Theorem \ref{thm:main}.
+From $|x_{k+1}-x_k| = O(1/k^2)$ it follows that $(x_k)$ is a Cauchy sequence in $\R^3$, so it converges.
+By Claim \ref{cl:claim1} there exist infinitely many indices $k(j,1)<k(j,2)<\cdots$ such that
+\[ x_{k(j,t),j} + \frac{3c_j}{(k(j,t)^2 m+1)^j} \leq q_j, \]
+which gives
+\[ \lim_{k\to\infty} x_{k,j} = \lim_{t\to\infty} x_{k(j,t),j} \leq q_j. \]
+From Claim \ref{cl:claim2} we have infinitely many indices $k'(j,1)<k'(j,2)<\cdots$ such that
+\[ x_{k'(j,t),j} + \frac{3c_j}{(k'(j,t)^2 m+1)^j} > q_j, \]
+which implies
+\[ \lim_{k\to\infty} x_{k,j} = \lim_{t\to\infty} x_{k'(j,t),j} \geq q_j. \]
+It follows that $(x_k)$ converges precisely to the point $q$.
+
+On the other hand, by the definition of the sequence $(x_k)$, we have
+\[ \lim_{k\to\infty} M^{-1} x_k 
+= \sum_{\substack{k\geq K\\ 1\leq j\leq 3\\ \epsilon_{k,j}=1}} \sum_{a\in S_j} \begin{pmatrix} \frac{1}{a(k^2 m+1)} \\[1mm] \frac{1}{a(k^2 m+1)+1} \\[1mm] \frac{1}{a(k^2 m+1)+2} \end{pmatrix}
++ \sum_{\substack{k\geq K\\ 1\leq j\leq 3\\ \epsilon_{k,j}=0}} \sum_{a\in T_j} \begin{pmatrix} \frac{1}{a(k^2 m+1)} \\[1mm] \frac{1}{a(k^2 m+1)+1} \\[1mm] \frac{1}{a(k^2 m+1)+2} \end{pmatrix}. \]
+Therefore, for every $q$ as in \eqref{eq:choiceq}, the point $M^{-1}q$ is of the desired form
+\[ \Big(\sum_{z\in A}\frac{1}{z}, \sum_{z\in A}\frac{1}{z+1}, \sum_{z\in A}\frac{1}{z+2}\Big) \]
+for the set
+\[ A := \bigcup_{\substack{k\geq K\\ 1\leq j\leq 3\\ \epsilon_{k,j}=1}} \{ a(k^2 m+1) : a\in S_j \}
+\cup \bigcup_{\substack{k\geq K\\ 1\leq j\leq 3\\ \epsilon_{k,j}=0}} \{ a(k^2 m+1) : a\in T_j \}. \]
+We are done since $M^{-1}\mathcal{Q}$ is a non-degenerate parallelepiped, so it has a non-empty interior.
+The proof of Theorem \ref{thm:main} is complete.
+
+As Erd\H{o}s and Graham mentioned, one could study further higher-dimensional generalizations of the same problem.
+The corresponding generalizations of Lemma \ref{lm:arithmetic} would require more involved variants of ad-hoc arithmetic identities used in its proof, but perhaps one could find a different proof of Theorem \ref{thm:main} that avoids such identities altogether.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Acknowledgment}
+This work was supported in part by the Croatian Science Foundation under the project HRZZ-IP-2022-10-5116 (FANAP).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliography{harmonicsubseries}
+\bibliographystyle{plainurl}
+
+\end{document}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          

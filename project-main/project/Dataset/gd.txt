@@ -1,0 +1,1044 @@
+
+
+
+\begin{abstract}
+Many contact metric manifolds are critical points of curvature functionals restricted to spaces of associated metrics.
+The Godbillon-Vey functional was never considered in a variational context in Contact Geometry.
+Recently we extended this functional from foliations to arbitrary plane fields on a 3-dimensio\-nal manifold,
+so, the following question arises: {can one use the Godbillon-Vey functional to find optimal almost contact manifolds}?
+In~the paper, we introduce a Godbillon-Vey type functional for a 3-dimensional almost contact manifold,
+present it in Reinhart-Wood form and find its Euler-Lagrange equations for all variations preserving the Reeb vector field.
+We~construct critical (for our functional) 3-dimensional almost contact manifolds having a double-twisted product structure,
+these solutions belong to the class $C_{5}\oplus C_{12}$ according to Chinea-Gonzalez classification.
+
+\vskip1mm\noindent
+\textbf{Keywords}:
+almost contact manifold,
+%distribution,
+Godbillon-Vey functional,
+double-twisted product,
+%harmonic,
+variation, Chinea-Gonzalez classes
+%, twisted product
+
+\textbf{Mathematics Subject Classifications (2010)} Primary 53C12; Secondary 53C21
+\end{abstract}
+
+
+\section{Introduction}
+%\label{sec:intro}
+
+
+D.~Chinea and C.~Gonzalez \cite{CGD-90} decomposed the space of certain 3-tensors on
+an almost contact metric manifold $M^{2n+1}(\varphi,\omega,T,g)$ into irreducible invariant components
+under the action of the structural group $U(n)\times1$ and developed a Gray-Hervella type classification for almost contact metric (a.c.m.) manifolds.
+They obtained 12 classes of a.c.m. manifolds, which in dimension three are reduced to five classes:
+$C_5$ of $\beta$-Kenmotsu manifolds, $C_6$ of $\alpha$-Sasakian manifolds, $C_9$-manifolds, $C_{12}$-manifolds
+(called generalized Sasakian space forms) and $|C|=C_5\cap C_{12}$ of cosymplectic manifolds.
+%For example, 3-dimensional $C_{12}$-manifolds are charac\-terized (among all 3-dimensional a.c.m. manifolds) by the equality
+% $\nabla_{\varphi X}\,T = \omega(X)\nabla_T\,T$, where $\nabla$ is the Levi-Civita connection.
+%
+Many works on a.c.m. manifolds are devoted to normal structures, that is to the first three Chinea-Gonzalez classes.
+Some authors investigate $C_5\oplus C_{12}$-manifolds, consisting of integrable, non-normal manifolds because $\nabla_TT\ne0$, see~\cite{bbs23,CF-2019,f-2013}, where $\nabla$ is the Levi-Civita connection.
+%bbs23,
+%Class $C_5\oplus C_6$ in dimension three consists of normal a.c.m. manifolds, called trans-Sasakian manifolds, e.g., \cite{bbs23}.
+%Class $C_5\oplus C_{12}$ (called generalized Sasakian space forms, see \cite{CF-2019}) consists of a.c.m. manifolds with the condition $[\varphi,\varphi]=0$,
+%where the {Nijenhuis torsion} $[\varphi,\varphi]$ of a (1,1)-tensor $\varphi$ is given~by
+%\[
+% $[\varphi,\varphi](X,Y)=[\varphi X,\varphi Y]-\varphi[\varphi X,\varphi ]-\varphi[X,\varphi Y]-[X,Y]$.
+%\]
+%The~$C_5\oplus C_{12}$-manifolds are non-normal because $\nabla_TT\ne0$, see \cite{CF-2019}.
+%This class is defined by some function $\alpha$, and when this function vanishes, the class $C_5\oplus C_{12}$ is reduced to $C_{12}$.
+%Moreover, generalized $C_{12}$-structures coincide with the $C_5\oplus C_{12}$ which are never normal as long as $\nabla_TT\ne0$.
+%(called generalized $C_{12}$-manifolds, which are never normal as long as $\nabla_TT\ne0$, see \cite{CF-2019}) consists of the almost contact metric
+%The Chinea-Gonzalez class $\bigoplus_{1\le i\le 5} C_{i}$ consists of the a.c.m. manifolds that are, locally, twisted products $B \times_{u} I$,
+%$B$ an almost Hermitian manifold, $I\subset\RR$ an open interval, $M$ an almost Hermitian manifold, and $u$ a smooth positive function, see~\cite{f-2012}.
+The elements of $\bigoplus_{1\le i\le 5} C_{i}\oplus C_{12}$ are a.c.m. manifolds that are locally a double-twisted product $B \times_{(u,v)} I$,
+%with the metric $g=(u^2 g_B)\oplus(v^2 ds^2)$,
+where $B$ is an almost Hermitian manifold, $I\subset\RR$ is an open interval and $u,v$ are smooth positive functions on $B\times I$.
+%Twisted products are important in clarifying the relation between almost Hermitian and a.c.m. manifolds.
+The~first result in this topic states that any Kenmotsu manifold, i.e., $(\nabla_{X}\,\varphi)Y=g(\varphi X, Y)\,T -\omega(Y)\,\varphi X$,
+is locally a warped product $B \times_{u} I$,
+where $u\in C^\infty(I)$ and $B$ is a K\"{a}hler manifold, see~\cite{kenmotsu1972}.
+%
+Note that any two-dimensional almost complex manifold is complex, moreover, it is K\"{a}hler.
+Thus, in dimension three, the class $\bigoplus_{1\le i\le 5} C_{i}\oplus C_{12}$ reduces to
+%In particular, 3-dimensional
+$C_5\oplus C_{12}$, whose elements are locally a double-twisted product $B \times_{(u,v)} I$,
+where $B$ is a 2-dimensional K\"{a}hler manifold, see \cite{CF-2019,f-2013}.
+%, and are characterized (among all 3-dimensional a.c.m. manifolds) by the condition
+%$\nabla_{\varphi X}\,T = \beta\varphi X$ with $2\,\beta=\Div T$.
+%%
+
+\smallskip
+
+Finding critical metrics of certain functionals can be considered as an approach to searching for the best metric for a given manifold.
+Many contact metric manifolds are critical points of curvature functionals restricted to spaces of associated metrics;
+% rather than the larger class of metrics of the same total volume);
+for example, symplectical manifolds are critical for the total scalar curvature and
+K-contact manifolds are critical for the total Ricci curvature in the $T$-direction, e.g., \cite[Sect.~5]{Blairsurvey}.
+
+The Godbillon-Vey functional was introduced for foliations of codimension one in \cite{gv71},
+its changes under infinitesimal deformations of the foliation were studied, for example, in~\cite{as2015},
+but this functional was never considered in a variational context in Contact Geometry.
+%
+In~\cite{rw3,rw-gv2,R2021} we extended the Godbillon-Vey functional from foliations to arbitrary plane fields on a 3-dimensio\-nal manifold
+and used the calculus of variations to characterize critical metrics in distinguished classes of almost-product manifolds.
+So, a question arises: \textit{can one use a Godbillon-Vey type functional to find optimal 3-dimensional a.c.m. manifolds,
+e.g., in $C_{5}\oplus C_{12}$ according to Chinea-Gonzalez classification}?
+To~answer the question, we define a new Godbillon-Vey type functional, 
+see \eqref{Eq-3gv},
+present it in Reinhart-Wood form and derive its Euler-Lagrange equations for variations preserving the Reeb vector field $T$ (Theorem~\ref{T-EL-5}).
+For clarity of calculations, we divide variations into two types, each of which has a geometric meaning.
+These allow us to find new solutions to the problem: \textit{what a.c.m. manifolds are in some sense optimal}?
+Since a.c.m. manifolds with the geodesic vector field $T$ are critical for our functional,
+it is interesting to study the case when the curvature $k$ of $T$-curves is non-zero.
+We~construct such critical 3-dimensional a.c.m. manifolds having a double-twisted product structure, i.e., solutions belonging to
+$C_{5}\oplus C_{12}$ (Theorem~\ref{T-EL-02}).
+
+
+
+\section{The Reinhart-Wood type formula}
+
+An almost contact structure $(\varphi,\omega,T)$ on a smooth odd-dimensional manifold $M$
+consists of an endomorphism $\varphi$ of $TM$, a 1-form $\omega\in\Lambda^1(M)$ and a vector field $T$ satisfying
+\begin{align}\label{Eq-001}
+% \varphi^2 = -\id +\,\omega\otimes T,
+ \varphi^2(X) = -X +\,\omega(X)\,T\quad (X\in TM),
+ \qquad \omega(T)=1.
+\end{align}
+The plane field $\ker\omega$ is called the contact distribution.
+By \eqref{Eq-001}, we get $\omega\circ\varphi=0$ and $\varphi\,T=0$.
+
+Let $T$ be a nonzero vector field on a smooth
+%connected
+orientable three-dimensional manifold $M$.
+Then for any 1-form $\omega\in\Lambda^1(M)$ such that $\omega(T)=1$ there exists a unique tensor $\varphi\in End(TM)$
+such that the restriction of $\varphi$ on
+%the plane
+$\ker\omega$ specifies a right-hand rotation and
+$M^3(\varphi,\omega,T)$ is an almost contact manifold.
+%
+In \cite{rw3,rw-gv2,R2021}, the Godbillon-Vey functional
+%\begin{align*}
+ $gv=\int_M \eta\wedge d\eta$, where
+ %\begin{align}\label{Eq-000}
+ $\eta = \iota_T\,d\omega = d\omega(T,\cdot)$,
+%\end{align*}
+was extended from foliations to arbitrary plane fields on $M^3$. Note that~$\eta(T)=0$.
+
+We use the formula $d\omega(X,Y)=X\omega(Y) - Y\omega(X) - \omega([X,Y])$ for $\omega\in\Lambda^1(M)$ and $X,Y\in TM$.
+
+\begin{definition}\rm
+Given an almost contact structure $(\varphi,\omega,T)$ on $M^3$, define a 1-form $\eta^*\in\Lambda^1(M)$~by
+\begin{align}\label{Eq-00a}
+ \eta^*(X) := (\iota_T\,d\omega)(\varphi X) = d\omega(T,\varphi X)\quad (X\in TM),
+\end{align}
+i.e., $\eta^*=\eta\circ\varphi$.
+Using $\eta^*$, we introduce (similarly to $gv$) the following functional:
+\begin{align}\label{Eq-3gv}
+ gv^*=\int_M \eta^*\wedge d\eta^*.
+% ,\quad
+% gv^*_{1}=\int_M \eta^*\wedge d\eta,\quad
+% gv^*_{2}=\int_M \eta\wedge d\eta^*.
+\end{align}
+\end{definition}
+
+%We will extend the formulas with $\oc gv$ and $\overset{\centerdot\centerdot} gv $, proved in \cite{rw3,rw-gv2}, to $gv^*$.
+% and $gv^*_i\ (i=1,2)$.
+%We will extend for $gv^*$ and $gv^*_i$ the following formulas proven in \cite{rw-gv2}:
+%\[
+% \oc gv = 2\int_M \overset{\centerdot}\eta\wedge d\eta,\quad
+% \overset{\centerdot\centerdot} gv = 2\int_M (\overset{\centerdot\centerdot}\eta\wedge d\eta + \overset{\centerdot}\eta\wedge d\overset{\centerdot}\eta).
+%\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+If an {almost contact manifold} $M^3(\varphi,\omega,T)$ admits a Riemannian metric $g=\<\cdot,\cdot\>$ such that
+\begin{equation}\label{E-Q2}
+ \<\varphi X,\varphi Y\> = \<X,Y\> - \omega(X)\,\omega(Y),
+\end{equation}
+then $g$ is called a compatible metric and we get an a.c.m. manifold.
+Such a structure \eqref{E-Q2} is induced on any hypersurface of an almost Hermitian manifold.
+%A hypersurface of an almost Hermitian manifold inherits an almost contact structure.
+%If a compatible metric exists, it is not unique.
+Putting $Y=T$ in \eqref{E-Q2}, we get $\omega(X)=\<X,T\>$;
+thus, $T$ is $g$-orthogonal to $\ker\omega$.
+% for any compatible metric~$g$.
+An a.c.m. manifold such that
+\[
+ g(X,\varphi Y)=d\omega(X,Y)
+\]
+is called a contact metric manifold. Such manifolds have a geodesic vector field $T$.
+
+Given a unit vector field $T$ on a Riemannian manifold $(M^3,g)$, the unit normal $N$, the binormal $B = T\times N$ and the {torsion} $\tau$ of $T$-curves
+are defined on an open subset $U$ of~$M^3$, where the {curvature} $k$ of $T$-curves is nonzero.
+Further, we assume that $U$ is nowhere dense, so the set $M\setminus U$ can be neglected during integration over $M^3$.
+The 1-form in the Godbillon-Vey functional
+%\eqref{Eq-000}
+is given by $\eta = k N^\flat$ (i.e., $\eta(X)=k\<N,X\>$ for $X\in TM$) on $U$ and $\eta=0$ on $M\setminus U$, see~\cite{rw3,rw-gv2}.
+Thus, for the 1-form $\eta^*$ in \eqref{Eq-00a}, using $d\omega(T,\varphi X)=-\omega([T,\varphi X])=k\,\<N,\varphi X\>$
+and skew-symmetry of $\varphi$, we~get
+\begin{align*}
+ \eta^* = \left\{\begin{array}{cc}
+           -k (\varphi N)^\flat & \mbox{ on } U, \\
+            0 &  \mbox{ on } \ M\setminus U. \\
+          \end{array}\right.
+\end{align*}
+If $T$ is a geodesic vector field (i.e., $k=0$) then $\eta=\eta^*=0$, hence $gv^*
+%=gv^*_1=gv^*_2
+=0$.
+
+Recall that the Levi-Civita connection $\nabla$ of a metric $g=\<\cdot,\cdot\>$ is given by:
+\begin{equation}\label{E-L-Civita}
+%\nonumber
+ 2\,\<\nabla_X\,Y, Z\> = X \<Y,Z\> + Y \<X,Z\> - Z\<X,Y\> +\<[X, Y], Z\> - \<[X, Z], Y\> - \<[Y, Z], X\>.
+\end{equation}
+The~{non-symmetric second fundamental form} $h$ of the distribution $\ker\omega$ is defined by
+\begin{align}\label{E-h-tensor}
+ h_{X,Y} = \<\nabla_X Y, T\> = -\<\nabla_X T, Y\>\qquad (X,Y\in \ker\omega) .
+\end{align}
+%where $\nabla$ is the Levi-Civita connection of $g$.
+If the distribution $\ker\omega$ in $TM^3$ is integrable,
+then the tensor
+%The {non-integrability tensor} ${\mathcal T}$ of $\ker\omega$ (vanishing when $\ker\omega$ is integrable) is given~by
+%\[
+ $2\,{\mathcal T}_{X,Y} = \<[X,Y],T\>$
+%  = h_{X,Y}-h_{Y,X}$
+%\]
+vanishes; in this case, the 2-form $h$ is symmetric.
+%
+The mean curvature of $\ker\omega$ is defined by $H=\frac12\tr_g h$.
+%and the distribution $\ker\omega$ is said to be harmonic if $H=0$.
+The distribution $\ker\omega$ is said to be
+%strict
+totally umbilical (or, totally geodesic) if Sym$(h) = H g$ ($h=0$, respectively).
+Here,
+%\[
+ ${\rm Sym}(h)(X,Y) = \frac12\,(h(X,Y)+h(Y,X))$
+%\]
+is the symmetric second fundamental form of the distribution $\ker\omega$.
+%
+The following Frenet-Serret formulas are true on $U$:
+\begin{align}\label{E-Frene}
+ \nabla_T\, T=kN,\quad
+ \nabla_T\, N=-kT +\tau B,\quad
+ \nabla_T\, B=-\tau N .
+\end{align}
+Using \eqref{E-Frene}, we obtain $k=\<\nabla_T\,T, N\>$ and $\tau = -\<\nabla_T\,B, N\>$.
+%see \cite[p.~201]{R2021},
+%\begin{align*}%\label{E-k-tau}
+% k=\<[N,T],T\>,\quad 2\,\tau = \<[T,N],B\> -\<[T,B],N\>.
+%\end{align*}
+Recall, see \cite[Eq.~139]{R2021},
+\begin{align}\label{E-deta-old}
+ d\eta(T,B) = k(\tau - h_{B,N}),\quad
+ d\eta(T,N) = T(k) -k h_{N,N}.
+\end{align}
+With the volume form ${\rm d}\vol_g$ in mind, we derive formulas similar to the following one, see \cite{rw3,rw-gv2}:
+%\begin{align*}%\label{eq:rwood0}
+ $gv = - \int_M k^2(\tau - h_{B,N})\,{\rm d}\vol_g$,
+%\end{align*}
+obtained for foliations by B.L. Reinhart and J.W. Wood in \cite{rw73} with opposite sign by convention.
+
+\begin{Proposition} We obtain
+\begin{align}\label{eq:rwood1}
+ & gv^* = -\!\int_M k^2(\tau + h_{N,B})\,{\rm d}\vol_g .
+% , \\
+%\label{eq:rwood2}
+% & gv^*_1 = -\!\int_M \big(k\,T(k) - k^2 h_{N,N}\big)\,{\rm d}\vol_g, \quad
+%  gv^*_2 = \!\int_M \big( k\,T(k) + k^2 h_{B,B}\big)\,{\rm d}\vol_g  .
+\end{align}
+\end{Proposition}
+
+\begin{proof}
+We have $\varphi N=B$ and $\varphi B=-N$. From Frenet-Serret formulas
+%\eqref{E-Frene}
+and $\eta^*=\eta\circ\varphi$,
+we find
+\begin{align*}
+ d\eta^*(T,B) & = T(\eta(\varphi B)) - B(\eta(\varphi T)) - \eta(\varphi[T,B]) = -T(\eta(N)) - k\,\<\varphi[T,B], N\> \\
+ & = - T(k) - k\<\nabla_T\,B-\nabla_B\,T, B\> = -T(k) - k\,h_{B,B}, \\
+ d\eta^*(T,N) & = T(\eta(\varphi N)) - N(\eta(\varphi T)) - \eta(\varphi[T,N]) = T(\eta(B)) - k\,\<\varphi[T,N], N\> \\
+ & = k\,\<B, \nabla_T\,N-\nabla_N\,T\> = k\,(\tau + h_{N,B}).
+\end{align*}
+ Thus, using \eqref{E-deta-old}, $\eta^*(T)=\eta^*(N)=0$ and $\eta^*(B)=-k$, we calculate
+\begin{align*}
+ & (\eta^*\wedge d\eta^*)(T,N,B) =
+ %\eta^*(N)\,d\eta^*(B,T) +
+ \eta^*(B)\,d\eta^*(T,N) = - k^2(\tau + h_{N,B}).
+% , \\
+% & (\eta^*\wedge d\eta)(T,N,B) =
+% %\eta^*(N)\,d\eta(B,T) +
+% \eta^*(B)\,d\eta(T,N) = - k\,(T(k) - k\,h_{N,N}), \\
+% & (\eta\wedge d\eta^*)(T,N,B) = \eta(N)\,d\eta^*(B,T)
+% %+ \eta(B)\,d\eta^*(T,N)
+% =  k\,( T(k) +  k\,h_{B,B}) .
+\end{align*}
+Applying to the above the volume form ${\rm d}\vol_g$ on $(M^3, g)$, we get \eqref{eq:rwood1}.
+% and \eqref{eq:rwood2}.
+%obtained for foliations in \cite{rw73} with opposite sign (due just to a convention).
+\end{proof}
+
+%\begin{Corollary}
+%Let $M^3(\varphi,\omega,T,g)$ be an almost contact metric manifold,
+%and either $k$ is constant along $T$-curves or the contact distribution $\ker\omega$ is harmonic. Then $gv^*_2=0$.
+%\end{Corollary}
+
+%\begin{proof} If $T(k)=0$, then the proof follows from the equality $gv^*_2=\int_M \eta\wedge d\eta^*=\int_M k\,T(k)\,{\rm d}\vol_g$,
+%see \eqref{Eq-3gv}$_3$. If $\tr h=0$, then the claim follows from the equalities
+%${\rm div}(k^2 T)=k^2{\rm div}\,T + T(k^2)$, $\tr h=-{\rm div}\,T$ and the Divergence Theorem.
+%\end{proof}
+
+
+\section{The first variation of $gv^*$}
+
+Let a smooth orientable 3-dimensional manifold $M$ be equipped with a non-vanishing vector field~$T$.
+%Then there exists a unique Riemannian metric $g$ on $M$, a unique 1-form $\omega\in\Lambda^1(M)$
+%and a unique $(1,1)$-tensor $\varphi\in End(TM)$ such that the restriction of $\varphi$ on the plane $\ker\omega$ specifies a right-hand rotation and
+%$M(\varphi,\omega,T,g)$ is an a.c.m. manifold.
+Then for any Riemannian metric $g$ on $M$ such that $g(T,T)=1$ there exist a unique 1-form $\omega\in\Lambda^1(M)$
+(given by $\omega=g(T,\,\cdot)$)
+and a unique $(1,1)$-tensor $\varphi\in End(TM)$ such that
+the restriction of $\varphi$ on the plane $\ker\omega$ specifies a right-hand rotation and
+$M^3(\varphi,\omega,T, g)$ is an a.c.m. manifold.
+Let ${\cal C}(M,T)$ denote the set of all such a.c.m. structures on $(M,T)$.
+
+Let $M^3(\varphi,\omega,T,g)$ be an almost contact manifold, and $g_t\ (|t|<\varepsilon)$ a family of Riemannian metrics on $M^3$ such that $g_0=g$ and $g_t(T,T)\equiv1$. By the above, there exists a unique family $(\varphi_t,\omega_t,T,g_t)$ of a.c.m. structures in ${\cal C}(M,T)$
+such that $\varphi_0=\varphi$ and $\omega_0=\omega$.
+%and the 1-dimensional foliation spanned by $T_t$ does not depend on~$t$.
+Denote by dot the $t$-derivative at $t=0$ of any quantity on~$M$.
+Since $\oc T=0$ and $\oc g_{T,T}=0$ are true, the~symmetric $(0,2)$-tensor $\overset{\centerdot}g = (d g_t/dt)|_{t=0}$ has five independent components
+on a domain $U\subset M$ (where~$k\ne0$):
+\[
+ %\overset{\centerdot}g_{T,T},\quad
+ \oc g_{T,N},\quad \oc g_{T,B},\quad \oc g_{N,N},\quad \oc g_{N,B},\quad \oc g_{B,B}.
+\]
+Such variations $g_t$ that generate on $U$ only nonzero components $\oc g_{N,N},\oc g_{N,B}$ and $\oc g_{B,B}$, are called $g^\top$-variati\-ons.
+They preserve $T$ and $\ker\omega$; thus produce trivial Euler-Lagrange equations for the functional $gv$,
+see \cite{rw3,rw-gv2}.
+%(which is constant when ${\mathcal D}$ is integrable), compare \eqref{eq:rwood1},
+%\begin{equation}\label{E-rwood}
+% \gv_{\mathcal D}: g \to -\int_M k^2(\tau - h_{B,N})\,{\rm d}\vol_g.
+%\end{equation}
+In contrast, the $g^\top$-variations are essential for the functional $gv^*$ and they will be considered in Section~\ref{sec:4.1}.
+
+Variations $g_t$ of $g$ that generate on $U$ only nonzero components
+%$\oc g_{T,T},
+$\oc g_{T,N}$ and $\oc g_{T,B}$, are called $g^\pitchfork$-variations,
+%A variation $g_t$ of $g$ also preserving a metric on $\ker\omega$ is called $g^\pitchfork$-{variation}:
+%its tensor $\overset{\centerdot}g$ has three nonzero components $\overset{\centerdot}g_{T,T},\overset{\centerdot}g_{T,N}$ and $\overset{\centerdot}g_{T,B}$,
+see \cite{rw3,rw-gv2}.
+%An arbitrary $g^{\pitchfork}$-variation of a Riemannian metric is related to variations (i)--(ii) and can be decomposed into two cases:
+%1)~the metric varies along $T$ only, thus $\oc g_{T,T}$ can be nonzero;
+%2)~variations preserve the metric on $\ker\omega$ and $T$ but disturb their orthogonality, thus $\oc g_{T,N},\oc g_{T,B}$ can be nonzero.
+The $g^{\pitchfork}$-variations
+%of the case 2)
+will be considered in Section~\ref{sec:4.2}.
+%The $g^{\pitchfork}$-variations of the case 1) will be considered in Section~\ref{sec:4.3}.
+
+%${\rm d} \vol_{g}$,
+The following general variational formula for the volume form is true, see \cite[p.~162]{R2021}:
+% with $B =\oc g_{t|{t=0}}$:
+\begin{equation}\label{E-dtdvol}
+ ({\rm d} \vol_{g})^\centerdot = \frac{1}{2}\,(\tr_g \oc g) \, {\rm d} \vol_g \,.
+\end{equation}
+Applying arbitrary variation $g_t$ to \eqref{E-L-Civita}, one can find how the
+%Levi-Civita
+connection changes, e.g., \cite[p.~158]{R2021}:
+\begin{equation}\label{eq2G}
+ 2\,\<(\oc\nabla_X\,Y), Z\> = (\nabla^t_X\,{\oc g})(Y,Z) + (\nabla^t_Y\,{\oc g})(X,Z) - (\nabla^t_Z\,{\oc g})(X,Y),
+ \quad X,Y,Z\in\mathfrak{X}_M.
+\end{equation}
+
+The main goal of this section is the following
+
+\begin{Theorem}\label{T-EL-5}
+The Euler-Lagrange equations on $U$ of the functional $gv^*$ with respect to all variations in ${\cal C}(M,T)$ are the following:
+%of metric~
+\begin{align}\label{E-EL-gv0}
+\notag
+ & \tau + h_{N,B} =0 ,\quad
+%\notag &
+T(k) - k\,h_{B,B}=0 , \\
+%\notag
+ & (h_{N,B} + h_{B,N})\,(h_{N,N}+ h_{B,B}) = 0,\quad
+% &
+ h^2_{N,N} - h^2_{B,B} - h_{N,N}h_{B,B} - T(h_{N,N}) - \frac14\,k^2 = 0.
+\end{align}
+\end{Theorem}
+
+\begin{proof}
+%Applying \eqref{E-EL-gv}, we get
+%\begin{align*}%\label{E-1-var-2}
+%%%%%%%%%%% k\,h_{B,B}
+% & (gv^*)^\centerdot = -4\int_M k\Big\{ -(h_{N,B} + h_{B,N})(h_{N,N} + h_{B,B})\,\oc g_{T,N} \\
+% & + \Big( h^2_{N,N} - h^2_{B,B} - h_{N,N}h_{B,B} - T(h_{N,N}) - \frac14\,k^2 \Big)\oc g_{T,B} \Big\} d\vol_g  .
+%\end{align*}
+Using the Euler-Lagrange equations \eqref{E-EL-gv} for  $g^\top$-variations (in Section~\ref{sec:4.1}), we simplify the Euler-Lagrange equations \eqref{E-EL-gv3} for $g^\pitchfork$-variations (in Section~\ref{sec:4.2}), and get \eqref{E-EL-gv0}.
+\end{proof}
+
+
+\subsection{The $g^\top$-variations}
+\label{sec:4.1}
+
+%We consider variations $g_t\ (t>0)$ of a compatible Riemannian metric.
+
+
+\begin{Lemma}%\label{L-002}
+For $g^\top$-variations of metric on $U$, we obtain $\oc\eta=0$ and
+\begin{align}\label{E-diff}
+\notag
+ & \oc N = -\frac12\,\oc g_{N,N}\,N - \oc g_{N,B}\,B, \qquad \oc B = - \frac12\,\oc g_{B,B}\,B , \qquad \oc k = - \frac k2\,\oc g_{N,N} ,
+%\quad \oc\tau = \frac12\,h_{N,B}\oc g_{B,B} + \frac12\,(h_{N,N} - h_{B,B}\oc g_{N,B} -\frac12\,T(\oc g_{N,B}) ,
+\\
+%\notag
+ & (\tau + h_{N,B})^\centerdot = (h_{N,N} - h_{B,B})\oc g_{N,B} +  \frac12\,(\tau + h_{N,B})\oc g_{B,B} - T(\oc g_{N,B}).
+% \oc\varphi\,T = 0,\quad
+% \oc\varphi\,N =  \frac12\,\big(\oc g_{N,N} - \oc g_{B,B}\big) B - \oc g_{N,B}\,N ,\quad
+% \oc\varphi\,B = \frac12\,\big(\oc g_{N,N} - \oc g_{B,B}\big) N + \oc g_{N,B}\,B ,\\
+%%\notag
+% & (\eta^*)^\centerdot(T) = 0,\quad (\eta^*)^\centerdot(N) = k\,\oc g_{N,B} ,\quad
+% (\eta^*)^\centerdot(B) = \frac k2\,(\oc g_{N,N} - \oc g_{B,B}) .
+\end{align}
+\end{Lemma}
+
+\begin{proof} Using $\oc T=0$,
+%see conditions (iii),
+we find
+\begin{align*}
+ \<\oc N,T\>=\<\oc B,T\>=0,\quad
+ \<\oc N,N\>=-\frac12\,\oc g_{N,N},\quad
+ \<\oc B,B\>=-\frac12\,\oc g_{B,B},\quad
+ \<\oc N,B\>+\<\oc B,N\>=-\oc g_{N,B}.
+\end{align*}
+Differentiating $\<\nabla_T\,T, N\>=k$, $\<\nabla_T\,T, B\>=0$ and using \eqref{E-Frene} and \eqref{eq2G}, we find
+\begin{align*}
+ & \oc k = \frac k2\,\oc g_{N,N} + (\nabla_T\,\oc g)_{T,N} -\frac12\,(\nabla_N\,\oc g)_{T,T},\\
+ & \< \oc B, N\> = - \oc g_{N,B} - \frac1k\,(\nabla_T\,\oc g)_{T,B} +\frac1{2\,k}\,(\nabla_B\,\oc g)_{T,T}.
+\end{align*}
+By the above, $\< \oc N, B\> = \frac1{k}\,(\nabla_T\,\oc g)_{T,B} - \frac1{2\,k}\,(\nabla_B\,\oc g)_{T,T}$ is true.
+%\begin{align*}
+% k\,\< \oc N, B\> = (\nabla_T\,\oc g)_{T,B} - \frac1{2}\,(\nabla_B\,\oc g)_{T,T}.
+%\end{align*}
+Thus,
+\begin{align*}
+ & \oc N = -\frac12\,\oc g_{N,N}\,N + \frac1k\,\big((\nabla_T\,\oc g)_{T,B} - \frac12\,(\nabla_B\,\oc g)_{T,T} \big)\,B, \\
+ & \oc B = \big(- \oc g_{N,B} - \frac1k\,(\nabla_T\,\oc g)_{T,B} + \frac1{2\,k}\,(\nabla_B\,\oc g)_{T,T} \big)\,N - \frac12\,\oc g_{B,B}\,B .
+ %,\\
+ %& \oc k = k\,\oc g_{N,N} + (\nabla_T\,\oc g)_{N,N} - \frac12\,(\nabla_N\,\oc g)_{T,T} .
+\end{align*}
+Next, using \eqref{E-Frene} and $\oc g_{T,X}=0$, we find
+\begin{align*}%\label{E-nabla-dot-g}
+\notag
+ & (\nabla_N\,\oc g)_{T,T} = (\nabla_B\,\oc g)_{T,T} = 0 , \quad  (\nabla_T\,\oc g)_{T,B} = - k\,\oc g_{N,B},
+ \quad (\nabla_T\,\oc g)_{T,N} = - k\,\oc g_{N,N} , \\
+ & (\nabla_T\,\oc g)_{N,N} = T(\oc g_{N,N}) - 2\,\tau\,\oc g_{N,B},\quad (\nabla_N\,\oc g)_{N,T} = h_{N,N}\,\oc g_{N,N} + h_{N,B}\,\oc g_{N,B}.
+\end{align*}
+%conclude that $\<\nabla^t_{T}\,T, X\>_t = -\<[T,X], T\>$ does not depend on $t$. Thus, $\oc g_{N,X}=\<\oc N, X\>$.
+From the above we find
+%the expressions of
+$\oc N$, $\oc B$ and $\oc k$ in \eqref{E-diff}.
+%Differentiating $\varphi\,T=0$ and using $\oc T=0$, we find, $\oc\varphi\,T=0$.
+%Differentiating $\<\varphi N, T\>=0$, $\<\varphi N, N\>=0$ and $\<\varphi N, B\>=1$, we find, respectively,
+%\begin{align*}
+% \<\oc \varphi\,N, T\>=0,\quad
+% \<\oc \varphi\,N, N\>=-\oc g_{N,B},\quad
+% \<\oc \varphi\,N, B\>=-\oc g_{B,B} - \frac12\,\oc g_{N,N} + \frac12\,\oc g_{B,B} .
+%\end{align*}
+%From this we find $\oc\varphi N$ in \eqref{E-diff}.
+%Similarly, we get $\oc\varphi B$ in \eqref{E-diff}.
+%Differentiating $\eta(T)=0$, $\eta(N)=k$, $\eta(B)=0$ and $\eta^*(T)=0$, $\eta^*(N)=0$, $\eta^*(B)=-k$, we find, respectively,
+%\begin{align*}
+% & \oc\eta(T) = 0 ,\quad \oc\eta(N) = \oc k + \frac k2\,\oc g_{N,N} = 0 ,\quad \oc\eta(B) = 0 , \\
+% & (\eta^*)^\centerdot(T) = 0,\quad (\eta^*)^\centerdot(N) = \frac12\,(\nabla_B\,\oc g)_{T,T} - (\nabla_T\,\oc g)_{T,B},\quad
+% (\eta^*)^\centerdot(B) = -\oc k -\frac k2\,\oc g_{B,B} .
+%\end{align*}
+%From the above, using \eqref{E-nabla-dot-g}, we find $\oc\eta=0$ and $(\eta^*)^\centerdot$ in \eqref{E-diff}.
+Using \eqref{E-h-tensor} and \eqref{E-Frene}, we calculate
+\[
+ \tau + h_{N,B} = -\<\nabla_T\,B, N\> + \<\nabla_N\,B, T\> = \<\nabla_T\,N, B\> - \<\nabla_N\,T, B\> = \<[T,N], B\>.
+\]
+Since the Lie bracket does not depend on metric, we get
+\begin{align*}
+ & (\tau + h_{N,B})^\centerdot = \<[T,N], B\>^\centerdot = \oc g_{[T,N], B} + \<[T, \oc N], B\> + \<[T,N], \oc B\>  \\
+ & = h_{N,N}\,\oc g_{N,B} -\<[T,B], B\>\,\oc g_{N,B} - T(\oc g_{N,B}) +\frac12\,(\tau + h_{N,B})\,\oc g_{B,B} ,
+\end{align*}
+from which the expression of $(\tau + h_{N,B})^\centerdot$ in \eqref{E-diff} follows.
+\end{proof}
+
+%For the case (iii) of variations $g_t$, using \eqref{Eq-002} and  \eqref{eq:rwood1}, we obtain
+%\begin{align*}
+% & \frac12\,(\eta^*\wedge d\eta^*)^\centerdot =
+%  \oc\omega\wedge\eta^*\wedge \iota_T\,d\eta^* +\omega\circ\oc\varphi\wedge d\,\iota_T\,d\eta^* +\eta\circ\oc\varphi\wedge d\eta^*
+% + d\,\alpha \\
+%  %big(\frac12\,(\eta^*)^\centerdot\wedge \eta^* - \oc\omega\circ\varphi\wedge \iota_T\,d\eta^*\big).
+% & = \eta\circ\oc\varphi\wedge d\eta^* = \eta(\varphi B)\,f\eta^*(T,N) = -k^2(\tau+h_{N,B}) + d\,\alpha .
+%\end{align*}
+
+Our main result in Section~\ref{sec:4.1} is the following.
+
+\begin{Proposition}%\label{T-EL-2}
+An a.c.m. manifold $M^3(\varphi,\omega,T,g)$ is critical for the functional $gv^*$ with respect to $g^\top$-variations
+if and only if the following Euler-Lagrange equations hold on $U$:
+\begin{align}\label{E-EL-gv}
+%\notag
+%& gv^*:  \quad   k\,(\tau + h_{N,B}) =0 ,\quad k\,(T(k)+k\,h_{B,B})=0 , \\
+  & \tau + h_{N,B} =0 ,\qquad
+ T(k) - k\,h_{B,B}=0 .
+%  ,\quad {\rm for} \ \ gv^* .
+\end{align}
+\end{Proposition}
+
+\begin{proof}
+Using \eqref{eq:rwood1} and \eqref{E-dtdvol}, we find
+\begin{align*}
+ (gv^*)^\centerdot = -\int_M \big\{ (k^2(\tau + h_{N,B}))^\centerdot +\frac{k^2}2\,(\tau + h_{N,B})(\oc g_{N,N} + \oc g_{B,B})\big\} d\vol_g.
+\end{align*}
+By \eqref{E-diff}, we obtain
+\begin{align*}%\label{Eq-kth}
+\notag
+ & (k^2(\tau + h_{N,B}))^\centerdot = 2\,k\,\oc k\,(\tau + h_{N,B}) + k^2(\tau + h_{N,B})^\centerdot \\
+ & = \frac{k^2}2\,(\tau + h_{N,B})\oc g_{B,B} - k^2(\tau + h_{N,B})\,\oc g_{N,N} + k^2(h_{N,N} - h_{B,B})\oc g_{N,B} - k^2 T(\oc g_{N,B}).
+\end{align*}
+Using the equalities $T(f) = \Div(f\cdot T) - f\cdot\Div T$
+for any function $f\in C^1(M)$ and ${\rm div}\,T = -\tr_g h = -(h_{N,N} + h_{B,B})$, see \cite{R2021}, we get
+%[p.~17, p.~]
+\begin{align*}
+ k^2 T(\oc g_{N,B}) = {\rm div}(k^2\oc g_{N,B}\,T) + \big(k^2(h_{N,N} + h_{B,B}) - 2\,k\,T(k)\big)\,\oc g_{N,B}.
+\end{align*}
+Therefore,
+\begin{align*}%\label{E-1-var}
+\notag
+ & (gv^*)^\centerdot = -\int_M \Big\{ - k^2(\tau + h_{N,B})\,\oc g_{N,N} + k^2(h_{N,N} - h_{B,B})\oc g_{N,B} +  \frac{k^2}2\,(\tau + h_{N,B})\oc g_{B,B} \\
+\notag
+ & - \big(k^2(h_{N,N} + h_{B,B}) - 2\,k\,T(k)\big)\,\oc g_{N,B} + \frac{k^2}2\,(\tau + h_{N,B})(\oc g_{N,N} + \oc g_{B,B})\Big\} d\vol_g \\
+ & = -\int_M \Big\{ \frac{k^2}2\,(\tau + h_{N,B})\,(\oc g_{B,B} - \oc g_{N,N}) + 2\,(k\,T(k) - k^2 h_{B,B})\,\oc g_{N,B} \Big\} d\vol_g .
+\end{align*}
+Since $\oc g_{N,N},\oc g_{N,B},\oc g_{B,B}$ are independent functions on $M^3$, this completes the proof of \eqref{E-EL-gv}.
+%Recall that $(gv^*)^\centerdot = \int_M (\eta^*)^\centerdot \wedge d\eta^*$.
+%Using Lemma~\ref{L-002} and $(\eta^*)^\centerdot(T)=0$, we find
+%\begin{align*}
+% & ((\eta^*)^\centerdot \wedge d\eta^*)(T,N,B) = (\eta^*)^\centerdot(N)\,d\eta^*(B,T) + (\eta^*)^\centerdot(B)\,d\eta^*(T,N) \\
+% & = k\,(T(k)+k\,h_{B,B})\,\oc g_{N,B} + \frac12\,k^2\,(\tau +h_{N,B})\big(\oc g_{N,N} - \oc g_{B,B} \big) .
+%\end{align*}
+%Since $\oc g_{N,N},\oc g_{N,B},\oc g_{B,B}$ are independent functions on $M^3$, this completes the proof of \eqref{E-EL-gv}.
+\end{proof}
+
+
+\begin{Corollary}%\label{C-int}
+Let $\{T,N,B\}$ be an orthonormal frame on a Riemannian manifold $(M^3,g)$ such that the plane field $Span(T,N)$ is tangent to a Riemanian foliation,
+%the vector field
+$\nabla_T\,T$ is nonzero and parallel to $N$ and each $T$-curve has constant curvature.
+Set $\omega=T^\flat$
+%, where $N$ is a unit normal to $T$-curves on the leaves,
+and define $\varphi$ by $\varphi(T)=0$, $\varphi(N)=B$ and $\varphi(B)=-N$.
+Then $(\varphi,\omega,T,g)$ is critical for $gv^*$ with respect to $g^\top$-variations.
+\end{Corollary}
+
+\begin{proof} Since the plane field $Span(T,N)$ is integrable, the
+%Euler-Lagrange
+first equation of \eqref{E-EL-gv} holds.
+Since the foliation is Riemannian, we have $\nabla_B\,B=0$. By this,
+% and the condition,
+ the second
+%Euler-Lagrange
+equation of \eqref{E-EL-gv}~holds.
+\end{proof}
+
+
+\begin{Example}
+%[Using curvilinear coordinates]
+%[Using toroidal coordinate systems]
+\rm
+We present solutions of \eqref{E-EL-gv} with $k\ne0$ using orthogonal coordinates in $\RR^3$.
+%An example can be constructed using cylindrical coordinates,
+
+(i) Consider
+%We present a solution of \eqref{E-EL-gv} with $k\ne0$ in~
+$\RR^3\setminus\{\rho=0\}$ with cylindrical coordinates $(\rho,\phi,z)$.
+Set $T=\partial_\phi$, $N=-\partial_\rho$ and $B=\partial_z$. Define $\varphi$ by $\varphi(T)=0$, $\varphi(N)=B$ and $\varphi(B)=-N$.
+The $T$-curves are circles in $\RR^3$, the $(T,N)$-surfaces are horizontal planes $\{z=const\}$, and the $B$-curves vertical lines.
+%Then $k=\infty$ on the axis $\rho=0$.
+%By Lemma~\ref{P-002},
+Since the distribution Span$(T,N)$ is integrable, the first Euler-Lagrange equation of \eqref{E-EL-gv} is true.
+Since $T(k)=0$ and $\nabla_B\,B=0$, also the second Euler-Lagrange equation of \eqref{E-EL-gv} is true.
+%Similarly, using $T=\partial_\phi$, $B=-\partial_\rho$ and $N=\partial_z$, we present a solution of \eqref{E-EL-gv1}
+%with $k\ne0$ in~$\RR^3\setminus\{\rho=0\}$.
+%see Fig.~\ref{F-001}.
+%\begin{figure}[ht]
+%%\begin{center}
+%\includegraphics[scale=0.4,angle=0]{bipolar_toroidal.eps}
+%\caption{\label{F-001}\small Bipolar and toroidal coordinate systems.}
+%%\end{center}
+%\end{figure}
+%\end{Example}
+%\begin{Example}[Using spherical coordinates]\rm
+
+(ii)  Consider
+%We present a solution of \eqref{E-EL-gv} with $k\ne0$ in~
+$\RR^3\setminus\{\rho=0\ {\rm or}\ \theta=\pi/2\}$ with spherical coordinates $(\rho,\theta,\phi)$.
+Let $T$-curves be circles that are the intersections of spheres $\{\rho=const\}>0$ with horizontal planes.
+Then $k=0$ on the plane $\theta=\pi/2$,
+%i.e., $z=0$,
+and $k=\infty$ on the axis $\rho=0$.
+Set~$B=\partial_\rho$ and $N=B\times T$.
+%Set $T=\partial_\theta$, $N=-\partial_\rho$ and .
+Hence, spheres $\{\rho=const>0\}$ compose a foliation tangent to Span$(T,N)$.
+Define $\varphi$ by $\varphi(T)=0$, $\varphi(N)=B$ and $\varphi(B)=-N$.
+%The $T$-curves are circles, the $(T,N)$-surfaces are horizontal planes, and the $B$-curves vertical lines.
+%Since $T(k)=0$ and $\nabla_B\,B=0$, also
+Therefore, the~Euler-Lagrange equations \eqref{E-EL-gv} are true.
+\end{Example}
+
+
+
+\subsection{The $g^\pitchfork$-variations}
+\label{sec:4.2}
+
+%For the case of $g^\pitchfork$-variations of metric we can assume that $\oc T$ is collinear to $T$.
+
+\begin{Lemma}
+%\label{L-003}
+For $g^\pitchfork$-variations of metric on $U$, we obtain
+%$\oc\eta=0$ and
+\begin{align}\label{E-diff-2}
+\notag
+ &  \oc k = T(\oc g_{T,N}) - (\tau + h_{N,B})\oc g_{T,B}
+ %-\frac12\,N(\oc g_{T,T})
+ - h_{N,N}\,\oc g_{T,N} ,
+% \quad \oc T = -\frac12\,\oc g_{T,T}\,T,
+ \\
+\notag
+ & \oc N = -\frac12\,\oc g_{T,N}\,T +\frac1{k}\,\big((\tau - h_{B,N})\oc g_{T,N} -h_{B,B}\,\oc g_{T,B} +T(\oc g_{T,B})
+ %+\frac12\,B(\oc g_{T,T})
+ \big)\,B, \\
+\notag
+ & \oc B = -\frac12\,\oc g_{T,B}\,T -\frac1{k}\,\big((\tau - h_{B,N})\oc g_{T,N} -h_{B,B}\,\oc g_{T,B} +T(\oc g_{T,B})
+ %+\frac12\,B(\oc g_{T,T})
+ \big)\,N, \\
+\notag
+ & (\tau + h_{N,B})^\centerdot =
+ \frac1k\,(h_{N,N} + h_{B,B})\big( (\tau - h_{B,N})\oc g_{T,N} - h_{B,B}\,\oc g_{T,B} + T(\oc g_{T,B})
+ %+ \frac12\,B(\oc g_{T,T})
+ \big) \\
+ & + T\big(\frac1k\,\big( (\tau - h_{B,N})\oc g_{T,N} - h_{B,B}\,\oc g_{T,B} + T(\oc g_{T,B})
+% + \frac12\,B(\oc g_{T,T})
+ \big) \big)
+ - \frac k2\,\oc g_{T,B} .
+\end{align}
+\end{Lemma}
+
+\begin{proof}
+Since $\{T,N_t,B_t\}$ is an orthonormal frame on $U_t$ for all $g_t$, we get
+\begin{align*}
+% & \oc g_{T,T} + 2\,\<\oc T,T\>=0,\quad \<\oc T,N\>=\<\oc T,B\>=0,\\
+ & \oc g_{T,N} + 2\,\<T, \oc N\>=0,\quad \oc g_{T,B} + 2\,\<T, \oc B\>=0,\\
+ & \<\oc N, N\>=0,\quad \<\oc B, B\>=0,\quad \<\oc N, B\> + \<\oc B, N\>=0 .
+\end{align*}
+%Thus, \eqref{E-diff-2} for $\oc T$ is true.
+%\[
+% \oc T = -\frac12\,\oc g_{T,T}\,T .
+%\]
+Differentiating $\<\nabla_T\,T, N\>=k$, $\<\nabla_T\,T, B\>=0$ and using \eqref{E-Frene} and \eqref{eq2G}, we find
+$\oc k$ in \eqref{E-diff-2} and
+\begin{align*}
+ k\,\< \oc B, N\> =  h_{B,B}\,\oc g_{T,B} - (\tau - h_{B,N})\oc g_{T,N} - T(\oc g_{T,B}) .
+% - \frac12\,B(\oc g_{T,T}).
+\end{align*}
+Therefore, $k\,\< \oc N, B\> = -h_{B,B}\,\oc g_{T,B} + (\tau - h_{B,N})\oc g_{T,N} + T(\oc g_{T,B})$
+% + \frac12\,B(\oc g_{T,T})$
+ is true.
+%\begin{align*}
+% k\,\< \oc N, B\> = (\nabla_T\,\oc g)_{T,B} - \frac1{2}\,(\nabla_B\,\oc g)_{T,T}.
+%\end{align*}
+%Thus, we get $\oc N$ and $\oc B$ in \eqref{E-diff-2}.
+From the above we find
+%the expressions of
+$\oc N$, $\oc B$ and $\oc k$ in \eqref{E-diff-2}.
+%Using \eqref{E-h-tensor} and \eqref{E-Frene}, we calculate
+%\[
+% \tau + h_{N,B} = -\<\nabla_T\,B, N\> + \<\nabla_N\,B, T\> = \<\nabla_T\,N, B\> - \<\nabla_N\,T, B\> = \<[T,N], B\>.
+%\]
+%Since the Lie bracket does not depend on metric,
+Finally, we get
+\begin{align*}
+% &
+ (\tau + h_{N,B})^\centerdot = \<[T,N], B\>^\centerdot = \oc g_{[T,N], B} + \<[T, \oc N], B\> + \<[T,N], \oc B\>  ,
+% \\
+% & = h_{N,N}\,\oc g_{N,B} -\<[T,B], B\>\,\oc g_{N,B} - T(\oc g_{N,B}) +\frac12\,(\tau + h_{N,B})\,\oc g_{B,B} ,
+\end{align*}
+from which and known $\oc N$, $\oc B$ the expression of $(\tau + h_{N,B})^\centerdot$ in \eqref{E-diff-2} follows.
+\end{proof}
+
+Our main result in Section~\ref{sec:4.2} is the following.
+
+\begin{Proposition}%\label{T-EL-3}
+An a.c.m. manifold $M^3(\varphi,\omega,T,g)$ is critical for the functional $gv^*$ with respect to $g^\pitchfork$-variations
+if and only if the following Euler-Lagrange equations hold on $U$:
+\begin{align}\label{E-EL-gv3}
+\notag
+ & k\,(2\,\tau + h_{N,B} - h_{B,N})\,( h_{N,N} + h_{B,B}) - k\,(\tau + h_{N,B}) h_{N,N} \\
+\notag
+ &\qquad - T(k)\,(2\,\tau + h_{N,B} - h_{B,N}) - k\,T(\tau + h_{N,B}) =0 \\
+%\label{E-EL-gv3b}
+\notag
+ &  k\,(h_{N,N} + h_{B,B})^2 - T(k\,(h_{N,N} + h_{B,B})) - k\,(h_{N,N} + h_{B,B}) h_{B,B} \\
+ &\qquad + T(T(k)) - T(k)\,h_{N,N}  - k\,(\tau + h_{N,B})^2 - \frac14\,k^3 =0.
+\end{align}
+\end{Proposition}
+
+\begin{proof}
+For a $g^\pitchfork$-variation, using \eqref{eq:rwood1} and \eqref{E-dtdvol} with $\tr_g\,\oc g=0$, we find
+\begin{align*}
+ (gv^*)^\centerdot
+ %= -\int_M \big\{ (k^2(\tau + h_{N,B}))^\centerdot +\frac{k^2}2\,(\tau + h_{N,B})\,\oc g_{T,T}\big\} d\vol_g
+ =  -\int_M (k^2(\tau + h_{N,B}))^\centerdot\,d\vol_g.
+\end{align*}
+By \eqref{E-diff}, we obtain
+\begin{align}\label{Eq-kth-2}
+\notag
+ & (k^2(\tau + h_{N,B}))^\centerdot = 2\,k\,\oc k\,(\tau + h_{N,B}) + k^2(\tau + h_{N,B})^\centerdot \\
+\notag
+ & = 2\,k\,(\tau + h_{N,B}) \big(T(\oc g_{T,N}) - (\tau + h_{N,B})\oc g_{T,B}
+ %-\frac12\,N(\oc g_{T,T})
+ - h_{N,N}\,\oc g_{T,N}\big) \\
+\notag
+ & + k\,(h_{N,N} + h_{B,B})\big( (\tau - h_{B,N})\oc g_{T,N} - h_{B,B}\,\oc g_{T,B} + T(\oc g_{T,B}) \big) \\
+ & + k^2 T\big(\frac1k\,\big( (\tau - h_{B,N})\oc g_{T,N} - h_{B,B}\,\oc g_{T,B} + T(\oc g_{T,B}) \big) \big) - \frac12\,k^3\oc g_{T,B} .
+\end{align}
+Using the equalities
+$T(\alpha) = \Div(\alpha\cdot T) - \alpha\cdot\Div T$ for any function $\alpha\in C^1(M)$ and ${\rm div}\,T = -\tr_g h = -(h_{N,N} + h_{B,B})$, see \cite{R2021}, we get for any functions $\alpha,\beta,\gamma\in C^1(M)$:
+%[p.~17, p.~]
+\begin{align*}
+ & \alpha T(\oc\beta T) = \Div(\alpha\beta T) + \big[\alpha(h_{N,N}+h_{B,B}) - T(\alpha)\big]\oc\beta,\\
+ & \alpha T(\beta T(\oc\gamma)) = \Div([\alpha\beta\,T(\oc\gamma) + \alpha\beta(h_{N,N} + h_{B,B})\,\oc\gamma]\,T ) \\
+ & + \big[\alpha\beta(h_{N,N}+h_{B,B})^2 + T(\beta T(\alpha)) - \beta T(\alpha)(h_{N,N}+h_{B,B}) - T(\alpha\beta(h_{N,N}+h_{B,B})) \big]\oc\gamma .
+\end{align*}
+Therefore, with some functions $f_i$ on $M$ we get
+\begin{align*}
+ & 2\,k\,(\tau + h_{N,B})\,T(\oc g_{T,N}) = \big[2\,k\,(\tau {+} h_{N,B})\,( h_{N,N} {+} h_{B,B}) - 2\,T(k\,(\tau {+} h_{N,B}))\big]\,\oc g_{T,N} + \Div f_1, \\
+ & k\,(h_{N,N} + h_{B,B})\,T(\oc g_{T,B}) = \big[k\,(h_{N,N} + h_{B,B})^2 - T(k\,(h_{N,N} + h_{B,B}))\big]\,\oc g_{T,B} + \Div f_2, \\
+ & k^2 T\big(\frac1k\,\big( (\tau - h_{B,N})\oc g_{T,N} - h_{B,B}\,\oc g_{T,B}\big)\big) = k\,(\tau - h_{B,N})(h_{N,N} + h_{B,B})\,\oc g_{T,N} \\
+ & - k\,h_{B,B}(h_{N,N} + h_{B,B}),\oc g_{T,B}) + \Div f_3 ,\\
+ & k^2 T(\frac1k\,T(\oc g_{T,B})) = \big[k\,(h_{N,N} + h_{B,B})^2 - T(k\,(h_{N,N} + h_{B,B})) - 2\,T(k)\,(h_{N,N} + h_{B,B}) \\
+ & + 2\,T(T(k))\big]\,\oc g_{T,B} + \Div f_4.
+\end{align*}
+Integrating \eqref{Eq-kth-2} and using the above and the Divergence Theorem, gives
+\begin{align*}%\label{E-1-var-2}
+%\notag
+ & (gv^*)^\centerdot = -\int_M \Big\{ 2\,k\,(\tau + h_{N,B})\,T(\oc g_{T,N}) + k\,(h_{N,N} + h_{B,B})\,T(\oc g_{T,B}) \\
+ & + k^2 T\big(\frac1k\,\big( (\tau - h_{B,N})\oc g_{T,N} - h_{B,B}\,\oc g_{T,B} \big) \big) + k^2 T\big(\frac1k\,T(\oc g_{T,B} ) \big) \\
+ & - 2\,k\,(\tau + h_{N,B})(\tau + h_{N,B})\oc g_{T,B} - 2\,k\,(\tau + h_{N,B}) h_{N,N}\,\oc g_{T,N} \\
+ & + k\,(h_{N,N} + h_{B,B})\big( (\tau - h_{B,N})\oc g_{T,N} - h_{B,B}\,\oc g_{T,B}  \big)
+  - \frac12\,k^3\oc g_{T,B}
+ \Big\} d\vol_g \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ & = -4\int_M \Big\{ \Big[ k\,(2\,\tau {+} h_{N,B} {-} h_{B,N})\,( h_{N,N} {+} h_{B,B}) - k\,(\tau {+} h_{N,B}) h_{N,N}
+ - T(k\,(\tau {+} h_{N,B}))\Big]\,\oc g_{T,N} \\
+ & + \Big[ k\,(h_{N,N} + h_{B,B})^2 - T(k\,(h_{N,N} + h_{B,B})) - k\,h_{B,B}(h_{N,N} + h_{B,B}) \\
+ & - T(k)\,(h_{N,N} + h_{B,B}) + T(T(k)) - k\,(\tau + h_{N,B})^2 - \frac14\,k^3 \Big]\oc g_{T,B} \Big\} d\vol_g .
+\end{align*}
+Since $\oc g_{T,N},\oc g_{T,B}$ are independent functions on $M^3$, this completes the proof of \eqref{E-EL-gv3}.
+\end{proof}
+
+
+% for $gv^*$
+\section{Critical almost contact metric manifolds}
+%\section{Variations in ${\cal C}(M,T)$ and critical structures in $\bigoplus_{1\le i\le 5} C_{i}\oplus C_{12}$}
+%\section{Example with double-twisted product manifolds}
+%\label{sec:4.3}
+
+
+Using the Euler-Lagrange equations of Theorem~\ref{T-EL-5}, we get the following
+
+\begin{Proposition}\label{C-geod1}
+Any contact metric manifold $M^3(\varphi,\omega,T,g)$ is critical for the action $gv^*$ with respect to all variations in ${\cal C}(M,T)$.
+\end{Proposition}
+
+\begin{proof}
+Since $T$ is a geodesic vector field ($k=0$), see \cite{Blairsurvey}, then $U=\emptyset$ and \eqref{E-EL-gv0} become trivial.
+\end{proof}
+
+We list the defining conditions
+(formulated in terms of the covariant derivatives $\nabla\varphi$, $\nabla\,T$ and $\nabla\omega$)
+of any a.c.m. manifold $(M,\varphi,T,\omega, g)$ which falls in $C_5\oplus C_{12}$ or in its subclasses, see \cite{CF-2019}:
+\begin{align*}
+%\begin{tabular}{|c|c|}
+%  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  & C_5\oplus C_{12}: \qquad
+  (\nabla_X\,\varphi)Y = \beta\,(\<\varphi X,Y\>\,T - \omega(Y)\,\varphi X) -\omega(X)((\nabla_T\,\omega)(\varphi Y)\,T +\omega(Y)\varphi(\nabla_TT) ), \\
+%  \hline
+  & C_5: \ \qquad\qquad (\nabla_X\,\varphi)Y = \beta\,(\<\varphi X,Y\>T - \omega(Y)\,\varphi X),\quad \beta=const>0, \\
+%  \hline
+  & C_{12}: \qquad\qquad (\nabla_X\,\varphi)Y=-\omega(X)((\nabla_T\,\omega)(\varphi Y)\,T +\omega(Y)\varphi(\nabla_TT)) , \\
+%  \hline
+ & |C|=C_5\cap C_{12}: \qquad\qquad \nabla\,\varphi = 0 \quad {\rm (cosymplectic\ manifolds)}.
+%\end{tabular}
+\end{align*}
+The vanishing of the tensor $h$, see \eqref{E-h-tensor}, that is $\ker\omega$ defines a totally geodesic foliation, means that the considered manifold belongs to $C_{12}$.
+%, namely, it is a $\beta$-Kenmotsu manifold.
+The vanishing of $\nabla_T\,T$ means that the considered manifold belongs to $C_5$, namely, it is a $\beta$-Kenmotsu manifold.
+Thus, we get the following
+
+\begin{Proposition}\label{C-geod2}
+Any 3-dimensional a.c.m. manifold of a class $C_{5}$ is critical for the action $gv^*$ with respect to all variations in ${\cal C}(M,T)$.
+The set of 3-dimensional a.c.m. manifolds of a class $C_{12}$ that are critical for the action $gv^*$ with respect to all variations in ${\cal C}(M,T)$
+coincides with~$|C|$.
+%There exist critical () 3-dimensional a.c.m. manifolds of a class $C_{5}\oplus C_{12}$, presented as double twisted products $B\times_{(u,v)} I$ with the %metric $g=(u^2 g_B)\oplus(v^2 ds^2)$, where the functions ${H} = -\<2\,\nabla(\log v), T\>$ and $k = -\<\nabla(\log u), N\>$
+%satisfy~\eqref{E-EL-gv-umb}.
+\end{Proposition}
+
+Any a.c.m. structure with a geodesic vector field $T$ (e.g., Propositions~\ref{C-geod1} and \ref{C-geod2})
+can be called ``trivial" solution to the equations \eqref{E-EL-gv0}.
+What are non-trivial solutions of \eqref{E-EL-gv0}?
+% and \eqref{E-EL-gv1}?
+%, i.e., with $k=const\ne0$ along $T$-curves
+%Such critical almost contact metric structures satisfy $\tau +h_{N,B}=0$.
+
+
+\begin{Lemma}%\label{P-002}
+If an a.c.m. manifold $M^3(\varphi,\omega,T,g)$ is critical for the action $gv^*$ with respect to all variations in ${\cal C}(M,T)$,
+%with respect to $g^\top$-variations,
+%a non-trivial solution of \eqref{E-EL-gv}
+%or \eqref{E-EL-gv1}
+%on $M^3$, i.e., $k\ne0$,
+then the distribution Span$(T,N)$ on $U$
+%or Span$(T,B)$, respectively,
+is integrable.
+Moreover, if
+%the distribution
+$\ker\omega$ is either totally umbilical or integrable,
+% and non-harmonic,
+then also the distribution
+%Span$(T,N)$ and
+Span$(T,B)$ on $U$ is integrable.
+%are almost contact metric structures with $T(k)\ne0$ %, i.e., $\<[T,N], B\>=0$.
+%Moreover, if $\tau=0$, then the distribution Span$(T,B)$ is also integrable.
+\end{Lemma}
+
+\begin{proof}
+Using the equalities \eqref{E-h-tensor} and $\tau = \<\nabla_T\,N, B\>$,
+%\[
+% h_{N,B} = -\<\nabla_N\,T, B\>,\quad
+% \tau = \<\nabla_T\,N, B\>,
+%\]
+we rewrite the Euler-Lagrange equation \eqref{E-EL-gv}$_1$
+%$\tau +h_{N,B}=0$
+as $\<[T,N], B\>=0$; thus, the distribution Span$(T,N)$ is integrable.
+%Similarly, we rewrite the Euler-Lagrange equation \eqref{E-EL-gv1}$_1$ as $\<[T,B], N\>=0$; thus, the distribution Span$(T,B)$ is integrable.
+%In this case, $2\,\tau=\<[B,T], N\>$, and the second claim follows.
+By the conditions and the equalities $h_{N,B}+h_{B,N}=0$ (for totally umbilical $\ker\omega$) or $h_{N,B}-h_{B,N}=0$ (for integrable $\ker\omega$)
+and $\<[B,T],N\>=\tau-h_{B,N}$, the second claim is true.
+%the distributions Span$(T,N)$ and Span$(T,B)$ on $U$ are integrable.
+\end{proof}
+
+
+\begin{Proposition}\label{Cor-01}
+Let an a.c.m. manifold $M^3(\varphi,\omega,T,g)$ with integrable totally umbilical distribution $\ker\omega$ and the mean curvature $H\not\equiv0$
+be a critical for the action $gv^*$ with respect to all variations in ${\cal C}(M,T)$.
+Then the distributions Span$(T,N)$ and Span$(T,B)$ on $U$ are also integrable and the Euler-Lagrange equations \eqref{E-EL-gv0}
+for all variations in ${\cal C}(M,T)$ are reduced to the following: $\tau = 0$ and
+\begin{align}\label{E-EL-gv-umb}
+ T(k) = k\,H , \quad T(H) = - H^2 - (1/4)\,k^2 .
+\end{align}
+\end{Proposition}
+
+\begin{proof}
+By conditions, $h_{N,N}=h_{B,B}=H$ and $h_{N,B}=h_{N,B}=0$. Thus, the Euler-Lagrange equations \eqref{E-EL-gv0} are reduced to $\tau=0$ and \eqref{E-EL-gv-umb}.
+\end{proof}
+
+The Euler-Lagrange equations \eqref{E-EL-gv-umb} on $U$ can be considered along any $T$-curve (parameterized by $s$) as the dynamical system of two ODEs for
+functions $k(s)$ and $H(s)$:
+%, see \eqref{E-EL-gv-umb},
+\begin{align}\label{E-sys-kH}
+ (d/ds) k = k\,H , \quad (d/ds) H = - H^2 - (1/4)\,k^2.
+\end{align}
+
+
+\begin{Lemma}\label{L-003}
+The general solution of the system \eqref{E-sys-kH} has the following form:
+\begin{align*}
+% H(s) = C_2\,{\rm JacobiSN}((i\,s + C_1)\,C_2, i)
+  s = \int(H^4+C_1)^{-1/2}\,dH + C_2,\quad
+  k(s) =\pm 2\,\sqrt {- \frac {\rm d}{{\rm d}s}\,H(s) - H^2(s)} ,
+\end{align*}
+or, in Taylor series form with $k(0)=k_0\ne0$ and $h(0)=H_0$,
+\begin{align}\label{E-series-kH}
+\notag
+ & H (x) = H_0 - \Big( H_0^{2} +{\frac{ k_0^{2}}{4}} \Big) x + H_0^{3}{x}^{2}
+ - H_0^{2}\Big( H_0^{2} + {\frac{k_0^{2}}{4}}\Big) {x}^{3}
+ %+ H_0\Big( H_0^{4}+{\frac{k_0^{2} H_0^{2}}{4}}+{\frac {k_0^{4}}{32}} \Big) {x}^{4}
+ + O({x}^{4}), \\
+%
+ & k(x) = k_0 +k_0 H_0\,x - \frac { k_0^{3}}{8}\,{x}^{2}-{\frac {k_0^{3} H_0}{8}}\,{x}^{3}
+% + k_0^{3}\Big( -{\frac{ H_0^{2}}{16}} + {\frac{k_0^{2}}{128}}\Big)\,{x}^{4}
+ + O({x}^{4}) .
+\end{align}
+\end{Lemma}
+
+\begin{proof}
+From \eqref{E-sys-kH} we get the following ODEs:
+\begin{align}\label{E-sys-kH-2}
+ H'' = 2\,H^3,\quad k'' = - k^3/4.
+\end{align}
+Let $k(0)=k_0\ne0$, $H(0)=H_0$ be the values of solutions of \eqref{E-sys-kH} at $t=0$. Then the values of the first derivatives
+of solutions of \eqref{E-sys-kH-2} at $t=0$ should be
+%\[
+ $k'(0)=k_0 H_0$
+ %,\quad
+ and
+ $H'(0)=- H_0^2 - \frac14\,k_0^2$,
+%\]
+see Fig.~\ref{Fig-01} with $k_0=1$, $H_0=0$ and $|s|<3.4$, and the series expansion \eqref{E-series-kH} is valid.
+% when $k_0=1$ and $H_0=0$:
+%\[
+% H(s) = -(1/4)s-(1/640)s^5+O(s^6),\quad k(s) = 1-(1/8)s^2+(1/128)s^4 + O(s^6).
+%\]
+%which for given $k(0)=k_0\ne0$ and $H(0)=H_0$ admits a unique local solution for $|s|<\epsilon$,
+%\vskip-5mm
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=.474,angle=0]{dyn_syst_k-H-3.eps}
+%{time-S-Dali.eps}
+\label{Fig-01}
+\caption{Solution $k(s),H(s)$ of \eqref{E-sys-kH} with $k_0=1$ and $H_0=0$ for $|s|<3.4$.}
+\end{center}
+\end{figure}
+\end{proof}
+
+%Let $M=B\times I$ be the product of Riemannian manifolds $(B,g_B)$ and $(I, ds^2)$ with the canonical projections $\pi_1: M\to B$ and $\pi_2: M\to I$.
+%In our case of a contact metric structure on $M^3$, we have $\dim B = 2$.
+
+
+\begin{Theorem}\label{T-EL-02}
+There exist 3-dimensional a.c.m. manifolds of a class $C_{5}\oplus C_{12}$ critical for the action $gv^*$ with respect to all variations in ${\cal C}(M,T)$. These manifolds have integrable distributions Span$(T,N)$ and Span$(T,B)$ on $U$, $\tau=0$ and
+are presented locally as double twisted products $B\times_{(u,v)} I$,
+%with the metric $g=(u^2 g_B)\oplus(v^2 ds^2)$,
+where the functions ${H} = -2\,\<\nabla(\log u), T\>$ and $k = -\<\nabla(\log v), N\>\ne0$
+satisfy~\eqref{E-EL-gv-umb}.
+% with arbitrary initial conditions at $B\times\{0\}$.
+\end{Theorem}
+
+\begin{proof}
+By \cite{CF-2019,f-2013}, it is sufficient to build a critical double twisted structure $B\times_{(u,v)}I$
+with metric  $g=(u^2 g_B)\oplus(v^2 ds^2)$ on a domain $M=B\times I$ in $\RR^3(x,y,s)$,
+where $B=(-1,1)\times(-1,1)\subset\RR^2(x,y)$ and $u,v: M\to \RR$ are positive smooth functions.
+%The~metric of a {doubly twisted product} $B\times_{(u,v)} I$ is defined by $g=(u^2 g_B)\oplus(v^2 ds^2)$.
+The~second fundamental form $h$ and the mean curvature $H$ of the leaves $B\times\{s\}$ and the curvature $k$ of the fibers $\{x\}\times I$
+are given~by, see~\cite{pr,R2021}.
+\begin{align}\label{Eq-Hk}
+ {h} = -\<\nabla(\log u), T\>\,g^\top,\quad
+ {H}\cdot T = -2\,\nabla(\log u),\quad
+ k\cdot N = -\nabla(\log v).
+\end{align}
+%, thus, $k=|\nabla^\top(\log u)|$ and $H = |2\,\nabla^\bot(\log v)|$.
+The~{leaves} $B\times\{s\}$ are totally umbilical in $(M,g)$.
+For a critical a.c.m. structure on $(M,T)$, by Proposition~\ref{Cor-01},
+we get $\tau=0$ and the distributions Span$(T,N)$ and Span$(T,B)$ on $U$ are integrable.
+%We can assume that $T,N,B$ are parallel to coordinate vectors $\partial_x,\partial_y,\partial_s$.
+Using Lemma~\ref{L-003}, we restore functions $k$ and $H$ on $B\times I\subset\RR^3(x,y,s)$
+from their arbitrary initial values $k_0\ne0$ and $H_0$ on $B$ (for $s=0$).
+Next, we will show existence of appropriate functions $u,v$ on $B\times I$.
+Let us assume that $u=u(s)$ depends on one variable, thus, by \eqref{Eq-Hk}, $T$ is parallel to coordinate vector $\partial_s$
+and we can restore $u$ from its arbitrary initial values at $s=0$ by integration along $s$-coordinate lines.
+Then, we assume that $v=v(x)$ depends on one variable, thus, by \eqref{Eq-Hk}, $N$ is parallel to coordinate vector $\partial_x$
+and we can restore $v$ from its arbitrary initial values at $x=0$ by integration along $x$-coordinate lines.
+\end{proof}
+
+
+
+%\section{Higher dimensional case}
+\section{Conclusion}
+
+In the article, we applied the calculus of variations approach to finding best a.c.m. structures for a given manifold.
+We defined a new Godbillon-Vey type functional $gv^*$ for a 3-dimensional a.c.m. manifold,
+found its Euler-Lagrange equations for all variations preserving the Reeb vector field and
+constructed critical 3-dimensional a.c.m. manifolds having a double-twisted product structure, i.e., solutions
+belonging to the class $C_{5}\oplus C_{12}$ according to Chinea-Gonzalez classification.
+
+In~further work, we hope to study the critical a.c.m. manifolds (for $gv^*$) with nonintegrable distribution~$\ker\omega$.
+The~following tasks also seem interesting:
+study counterparts $gv^*_1=\int_M \eta\wedge d\eta^*$ and $gv^*_2=\int_M\eta^*\wedge d\eta$ of $gv^*$;
+calculate the second variations of $gv^*$ and $gv^*_i$ and find their~extrema.
+
+We also intend to study the multidimensional case of $gv^*$.
+For any a.c.m. manifold of dimension $2n+1\ge5$, one may define one-form $\eta^* = \eta\circ\varphi=-k\,(\varphi N)^\flat$,
+and analogously to the functionals $gv_s = \int_M \eta\wedge(d\eta)^p\wedge(d\omega)^{n-p}$ for all $p\ge1$ in \cite{rw3,rw-gv2},
+consider the following functionals:
+% on a.c.m. manifolds $M^{2n+1}(\varphi,\omega,T,g)$ with $2n+1\ge5$:
+\begin{equation}\label{E-gv-n}
+ gv^*_s = \int_M \eta^*\wedge (d\eta^*)^p\wedge(d\omega)^{n-p}, \quad 1\le p\le n .
+\end{equation}
+%which for $n=p=1$ are reduced to $gv^*$, and where we define $\eta^* = \eta\circ\varphi=-k\,(\varphi N)^\flat$.
+%Let $\omega,T$ and $\eta^* = \eta\circ\varphi=-k\,(\varphi N)^\flat$ be as above.
+%Let $\{N,Z_0=B,Z_1,\ldots,Z_{2n-2}\}$ be a local orthonormal basis of $\ker\omega$,
+%and as before, $h$ its second fundamental form, and $k,\tau$ the first and the second (among $2\,n$) curvatures of $T$-curves.
+A~question arises: \textit{what a.c.m. manifolds,
+e.g., in $\bigoplus_{1\le i\le 5} C_{i}\oplus C_{12}$ due to Chinea-Gonzalez classification,
+are optimal for functionals \eqref{E-gv-n} with respect to all variations in ${\cal C}(M,T)$}?
+
+
+%\baselineskip=13.1pt
+
+\begin{thebibliography}{}
+
+\bibitem{as2015}
+T. Asuke, Transverse projective structures of foliations and infinitesimal
+derivatives of the Godbillon-Vey class. Int. J. of Math. 26(4), 2015 (29 pp.)
+
+\bibitem{Blairsurvey}
+D.E. Blair, {A survey of Riemannian contact geometry}, Complex manifolds, {6} (2019), 31--64.
+% https://doi.org/10.1515/coma-2019-0002
+
+\bibitem{bbs23}
+B. Bayour, G. Beldjilali, M.L. Sinacer, Almost contact metric manifolds with certain condition. Ann. Glob. Anal. Geom. 64\,(2) (2023), 12\,pp.
+%https://doi.org/10.1007/s10455-023-09917-w.
+
+\bibitem{CF-2019}
+S. de Candia, M. Falcitelli, Curvature of $C_5\oplus C_{12}$-manifolds. Mediterr. J. Math., 16, 105 (2019).
+
+\bibitem{CGD-90}
+D. Chinea, C. Gonz\'{a}lez,
+% -D\'{a}vila,
+ A classification of almost contact metric manifolds, Ann. Mat. Pura Appl. 156(4) (1990), 15--36.
+
+\bibitem{f-2013}
+M. Falcitelli, A class of almost contact metric manifolds and double twisted products. Math. Sci. Appl. E-Notes (MSAEN) 1, 36--57 (2013)
+
+%\bibitem{f-2012}
+%M. Falcitelli, A class of almost contact metric manifolds and twisted products, Balk. J. Geom. Appl. (1) 17 (2012), 17--29.
+
+\bibitem{gv71}
+C. Godbillon, J. Vey, {Un invariant des feuilletages de codimension 1},
+C. R. Acad. Sci. Paris S{\'e}r A-B, 273 (1971), A92--A93.
+
+
+\bibitem{kenmotsu1972}
+K. Kenmotsu, A class of almost contact Riemannian manifolds, T\^{o}hoku Math. J., 24 (1972), 93--103.
+
+\bibitem{pr}
+R.\,Ponge, and H.\,Reckziegel: {Twisted products in pseudo-Riemannian geometry}, Geom. Dedicata  {48} (1993), 15--25
+
+\bibitem{rw73}
+B.L. Reinhart and J.W. Wood, {A metric formula for the Godbillon--Vey invariant for foliations}, Proc. Amer. Math. Soc., 38, No. 2 (1973), 427--430.
+
+\bibitem{rw3}
+V. Rovenski and P. Walczak, {Variations of the Godbillon-Vey invariant of foliated 3-manifolds},
+Complex Analysis and Operator Theory, 13(6), (2019), 2917--2937.
+
+\bibitem{rw-gv2}
+V. Rovenski and P. Walczak, {A Godbillon-Vey type invariant for a 3-dimensional manifold with a plane field}.
+Differential Geom. and its Applications, 66, (2019), 212--230.
+
+\bibitem{R2021}
+V. Rovenski and P. Walczak, {Extrinsic geometry of foliations}, Birkh\"{a}user, Progress in Mathe\-matics, Vol. 339, 2021, 319 pp.
+
+\end{thebibliography}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      

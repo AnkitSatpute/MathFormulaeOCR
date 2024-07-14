@@ -1,0 +1,413 @@
+%\documentclass[12pt,twoside]{amsart}
+\documentclass[12pt,twoside]{amsart}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{verbatim}
+\usepackage{amsmath}
+\usepackage{comment}
+\usepackage{amsthm,thmtools,xcolor}
+\usepackage[colorlinks,linkcolor=blue,citecolor=blue, pdfstartview=FitH]
+{hyperref}
+%\usepackage{backref}
+% \setlength{\textwidth}{5.8in} \setlength{\oddsidemargin}{0.3in}
+%\setlength{\evensidemargin}{0.3in}\setlength{\footskip}{0.3in}
+%\setlength{\headsep}{0.25in}
+\usepackage{bm}
+\usepackage{a4wide}
+%\usepackage{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{hyperref}
+\usepackage{amssymb,latexsym}
+\usepackage{enumerate}
+\newcommand{\op} {\overline{\partial}}
+\newcommand{\dbar}{\ensuremath{\overline\partial}}
+\newcommand{\dbarstar}{\ensuremath{\overline\partial^*}}
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\maketitle
+  {\uppercasenonmath\shorttitle}
+  {}
+  {}{}
+\patchcmd\maketitle
+  {\@nx\MakeUppercase{\the\toks@}}
+  {\the\toks@}
+  {}
+  {}{}
+\patchcmd\@settitle
+  {\uppercasenonmath\@title}
+  {}
+  {}{}
+\patchcmd\@setauthors
+  {\MakeUppercase{\authors}}
+  {\authors}
+  {}{}
+
+
+
+
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\D}{\ensuremath{\mathbb{D}}}
+\newcommand{\T}{\ensuremath{\mathbb{T}}}
+\newcommand{\B}{\ensuremath{\mathcal{B}}}
+\newcommand{\X}{\ensuremath{\mathcal{X}}}
+
+
+\def\k{\kappa}
+\def\Re{{\rm Re}}
+\def\Im{{\rm Im}}
+\def\p{\partial}
+\def\o{\overline}
+\def\b{\bar}
+\def\mb{\mathbb}
+\def\mc{\mathcal}
+\def\n{\nabla}
+\def\v{\varphi}
+\def\w{\wedge}
+\def\m{\omega}
+\def\t{\triangle}
+\def\wt{\widetilde}
+
+\newenvironment{aligns}{\equation\aligned}{\endaligned\endequation}
+
+\makeatletter
+\newcommand{\sumprime}{\if@display\sideset{}{'}\sum%
+            \else\sum'\fi}
+\makeatother
+
+\begin{document}
+
+\numberwithin{equation}{section}
+
+% define theorem environments
+\newtheorem{theorem}{Theorem}[section]
+%\def\thetheorem{\unskip}
+\newtheorem{proposition}[theorem]{Proposition}
+%\def\theproposition{\unskip}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\def\theconjecture{\unskip}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{observation}[theorem]{Observation}
+%\def\thelemma{\unskip} \theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\numberwithin{definition}{section} %\def\thedefinition{\unskip}
+\newtheorem{remark}{Remark}
+\def\theremark{\unskip}
+\newtheorem{kl}{Key Lemma}
+\def\thekl{\unskip}
+\newtheorem{question}{Question}
+\def\thequestion{\unskip}
+\newtheorem{example}{Example}
+\def\theexample{\unskip}
+\newtheorem{problem}{Problem}
+
+\address{Franz Luef, Johannes Testorf, Xu Wang: Department of Mathematical Sciences, Norwegian University of Science and Technology, Trondheim, Norway}
+
+
+\email{franz.luef@ntnu.no, johannes.testorf@ntnu.no, xu.wang@ntnu.no}
+
+\title[Transcendentality condition for Gaussian Gabor frames]{On the transcendentality condition for Gaussian Gabor frames}
+
+ \author{Franz Luef, Johannes Testorf, Xu Wang}
+\date{\today}
+
+\begin{abstract} We give a criterion for higher-dimensional Gaussian Gabor frames, which is a reformulation of one of the main results in \cite[Thm 1.1]{LW} in more explicit terms.  We also show that this density criterion for Gaussian Gabor frames is generic in a certain sense.
+\end{abstract}
+
+\maketitle
+
+
+\section{Introduction}
+Let us recall the setting of \cite{LW}. We take a Gaussian $g_\Omega(t):=\overline{e^{\pi it^T\Omega t}}$, where $\Omega\in \mathfrak{h}$ is an element of the Siegel upper half space
+$$
+\mathfrak{h}:=\{\Omega\in \mathfrak{gl}(n,\mathbb C): \Omega = \Omega^T,\, \mathrm{Im}\,\Omega \text{ is positive definite}\},
+$$
+a lattice $\Gamma \subset \mathbb R^{2n}$, and associate to these the Gaussian Gabor system $\{\pi_\lambda g_\Omega\}_{\lambda\in\Lambda}$ as
+$$
+\pi_\lambda g_\Omega(t):=e^{2\pi i \xi^Tt}g_\Omega(t-x),\quad \lambda = (\xi,x)\in \Lambda, \quad\xi^Tt:=\sum\limits_{j=1}^n\xi_jt_j.
+$$
+Then $\{\pi_\lambda g_\Omega\}_{\lambda\in\Lambda}$ is called a Gaussian Gabor frame if there exist constants $A,B>0$ such that
+$$
+A\|f\|^2\le\sum\limits_{\lambda\in \Lambda}|(f,\pi_\lambda g_\Omega)|^2\le B\|f\|^2 \quad \text{for } f\in L^2(\mathbb R^{n}),
+$$
+where$(\cdot,\cdot)$ is the $L^2$ inner product.
+
+Multivariate Gaussian Gabor frames have recently been investigated by the first and the last author of this note \cite[Thm. 1.1]{LW}, where a density condition for a certain class of Gaussian Gabor frames is formulated for transcendental lattices $\Lambda$ in $\mathbb{R}^{2n}$. Recall that a lattice $\Gamma$ in $\mathbb C^n$ is said to be transcendental if the complex  torus $X:=\mathbb C^n/\Gamma$ is Campana simple, i.e. the only positive dimensional analytic subvariety of $X$ is $X$ itself.
+
+In \cite{RUZ} density conditions for bivariate Gaussian Gabor frames for product lattices are established by relating Gabor systems as elements of a quasi-shift invariant space of functions. An almost complete description of lattices that have Gaussian Gabor frames is given in \cite{RUZ}, except for lattices given by an irrational rotation. 
+
+By our reformulation of \cite[Thm. 1.1]{LW} in purely combinatorial terms for the lattice we are able to close this gap in \cite{RUZ} and we will also demonstrate that this density criterion is a generic property.
+
+\section{A Density Criterion for Gaussian Gabor Frames}
+
+We want to give an equivalent condition on lattices $\Lambda\subseteq\mathbb{R}^{2n}$ that give Gaussian Gabor frames $(g_\Omega,\Lambda)$.
+By Proposition 1.4 in \cite{LW}, it suffices to look at the $\Omega=i I$ case, i.e.
+$$
+g_\Omega(t)=e^{-\pi|t|^2}.
+$$
+In this case, by the Bargmann transform, we know that $(e^{-\pi|t|^2}, \Lambda)$ is a Gabor frame for $L^2(\mathbb R^n)$ if and only if 
+$$
+\Lambda_{\mathbb C}:=\{\xi+ix \in \mathbb C^n: (\xi, x)\in \Lambda\}
+$$
+defines a frame for the classical Bargmann-Fock space.  Hence, by \cite[Prop. 2.1]{GL} we have the following fact:
+
+\begin{proposition}\label{pr:GL} $(e^{-\pi|t|^2}, \Lambda)$ is a Gabor frame for $L^2(\mathbb R^n)$ if and only if $\Lambda_{\mathbb C}$ is a set of uniqueness for $\mathcal F^\infty$, i.e. if for every  holomorphic function $F$ on $\mathbb C^n$ we have  
+$$
+\sup_{z\in \mathbb C^n} |F(z)|^2 e^{-\pi|z|^2}\le1 \ \ \text{and} \ \ F|_{\Lambda_\mathbb C} =0,
+$$
+then $F\equiv 0$ on $\mathbb C^n$.
+\end{proposition}
+On the other hand, one may use K\"ahler geometry methods to prove the following result.
+
+\begin{proposition}\label{pr:GL1} If $\Lambda_{\mathbb C}$ is not a set of uniqueness for $\mathcal F^\infty$ and $\mathbb C^n/\Lambda_{\mathbb C}$ has no analytic subvariety of dimension $1\leq d< n$ then $|\Lambda| \geq 1/n!$.
+\end{proposition}
+
+\begin{proof} If $\Lambda_{\mathbb C}$ is not a set of uniqueness for $\mathcal F^\infty$,  then the following $\omega$-pluri-subharmonic function (PSH)
+$$
+G(z):=\sup^*\left\lbrace \log(|F(z)|^2 e^{-\pi|z|^2}): F\in \mathcal O(\mathbb C^n), \sup_{z\in \mathbb C^n} |F(z)|^2 e^{-\pi|z|^2}=1, \ F|_{\Lambda_\mathbb C} =0\right\rbrace
+$$
+is not identically equal to $-\infty$, where $\mathcal O(\mathbb C^n)$ denotes the space of holomorphic functions on $\mathbb C^n$, $\sup^*$ denotes the upper semicontinuous regularization of the supremum and by $\omega$-PSH we mean that $G$ is an upper semicontinuous function with $dd^cG +\omega\ge 0$, and $\omega$ is the standard K\"ahler form on $\mathbb C^n$. 
+\\~\\
+Note that $G$ is $\Lambda_{\mathbb C}$-invariant. 
+\\~\\
+To see this, consider a point $z \in \mathbb{C}^n$, a lattice point $\lambda \in \Lambda_\mathbb{C}$, and a holomorphic function $F$ which is a suitable candidate for $G$. Then we have
+$$
+|F(z+\lambda)|^2e^{-\pi|z+\lambda|^2}= |F(z+\lambda)e^{-\pi z\overline{\lambda}-\frac{\pi|\lambda|^2}{2}}|^2e^{-\pi |z|^2}.
+$$
+Let us define
+$$
+\tilde{F}(z):= F(z+\lambda)e^{-\pi z\overline{\lambda}-\frac{\pi|\lambda|^2}{2}},
+$$
+we have that $\tilde{F}$ is also a candidate for $G$. This means that $G(z)$ is no less than $G(z+\lambda)$, implying $\Lambda_\mathbb C$-invariance.
+
+As such, we now consider $G$ as a function on the torus $\mathbb C^n/\Lambda_{\mathbb C}$. We clearly have that $dd^cG(z)$ is bounded from below by $-\omega$, meaning we may use the approximation result of Demailly for quasi-psh functions (\cite[Proposition 3.7]{Dem92}) to find a sequence of quasi-PSH functions $(G_m)_m$ which converge to $G$, such that $G_m>G$, have only analytic singularities, and fulfill the estimate:
+
+$$
+\nu_x(G)-\frac{n}{m}\leq \nu_x(G_m) \leq \nu_x(G),\; x \in \mathbb C^n/\Lambda_{\mathbb C}
+$$
+for the Lelong numbers of $G$ and $G_m$. We have the estimate for $G_m$
+$$
+dd^cG_m \geq -(1+\varepsilon_m)\omega,
+$$
+for some sequence of numbers $(\varepsilon_m)_m$ which decreases to $0$.
+\\~~\\
+ Assume now that $\mathbb C^n/\Lambda_{\mathbb C}$ has no analytic subvariety of dimension $1\leq d< n$. This then implies that the singularities of the $G_m$ must be isolated. Thus we can bound the Seshadri constant of $\mathbb C^n/\Lambda_{\mathbb C}$ from below by the Lelong numbers of $\frac{G_m}{1+\varepsilon_m}$  at the point corresponding to the origin.  Since these are bounded from below by $\frac{1-{(n/m)}}{1+\varepsilon_m}$, taking the limit as $m$ approaches infinity, we have that the Seshadri constant of $\mathbb C^n/\Lambda_{\mathbb C}$ is no less than one.  Demailly's mass concentration trick also implies that (see \cite[Theorem 2.8]{Tosatti1}) this bound on the Seshadri constant is equivalent to $|\Lambda| \geq 1/n!$.
+\end{proof}
+
+To check that $\mathbb C^n/\Lambda_{\mathbb C}$ has no analytic subvariety of dimension $1\leq d< n$ we need the following result (the proof follows directly from the argument in page 164-165 in \cite[pp.164-165]{Sha}).
+
+\begin{lemma}\label{le:sha} Let $\Gamma$ be a lattice in $\mathbb C^n$. Assume that the following linear mapping from singular homology to functionals on Dolbeault cohomology
+\begin{equation}\label{eq:sha}
+{\rm int}_\Gamma: \oplus_{1\leq k< n} H_{2k} (\mathbb C^n/\Gamma, \mathbb Z) \to \oplus_{p+q=2k, \,1\leq k< n, \,p>q\geq 0} (H^{p,q} (\mathbb C^n/\Gamma, \mathbb C))^*
+\end{equation}
+defined by
+$$
+{\rm int}_\Gamma(S)(\alpha):=\int_S \alpha
+$$
+is injective. Then $\mathbb C^n/\Gamma$ has no analytic subvariety of dimension $1\leq d< n$.
+\end{lemma}
+
+Let us give a more elementary description of this condition. The lattice $\Gamma$ is given by
+$$
+\Gamma = \mathbb{Z}e_1 + ... + \mathbb{Z}e_{2n},
+$$
+where $e_1,...,e_{2n}\in\mathbb{C}^n$ are vectors which are linearly independent over $\mathbb{R}$. In this case, the homology groups $H_{2k} (\mathbb C^n/\Gamma, \mathbb Z)$ have bases over $\mathbb Z$ given by
+$$
+S_i := \pi(\mathbb R e_{i_1} + ... + \mathbb R e_{i_{2k}}),
+$$
+for the multi-index $i=(i_1,...,i_{2k}) \in \mathbb N ^{2k}$ with $i_j<i_l$ for $j<l$. (For the sake of convenience we will denote the set of such indices by $I_k$). Observe that the map $\pi$ is a projection from $\mathbb C^n$ onto the complex torus $X$. As such, we may now write any cycle $S \in H_{2k} (\mathbb C^n/\Gamma, \mathbb Z)$ as 
+$$
+S=\sum\limits_{i\in I_k} a_iS_i,
+$$
+for some integers $a_i$. This fact should also help explain the singular homology groups on the Torus for those who are unfamiliar: $H_{2k}(\mathbb C^n/\Gamma,\mathbb Z)$ can be thought of as the free Abelian group over the closed "curves" of real dimension $2k$ (modulo some equivalence relation which will not be relevant in what follows). Now, for a $(p,q)$-form $\alpha$, where $p+q=k$ and $p>q\geq0$, we have that 
+$$
+ {\rm int}_\Gamma(S)(\alpha) = \sum\limits_{i\in I_k}a_i\int_{S_i}\alpha.
+$$
+Hence the injectivity of ${\rm int}_\Gamma(S)$ is equivalent to the following statement: 
+\\~\\
+If for every closed $(p,q)$ form $\alpha$, where $p+q=k$, $p>q\geq0$ ${\rm int}_\Gamma(S)(\alpha)=0$, the numbers $a_i$ must all be 0. The reader should of course note that this condition must also be checked for every $k$ less than $n$. Furthermore,  by linearity  it  suffices to check this condition on a a basis of $H^{p,q}(\mathbb C^n / \Gamma,\mathbb C)$.
+\\~\\
+We now turn to the case where $n=2$. Hence we need only to check the case $k=1$, which also forces $p=2$ and $q=0$. Additionally, the $(2,0)$ forms are spanned by the single form induced by $dz_1\wedge dz_2$. As such, the condition that ${\rm int}_\Gamma(S)(\alpha)$ is injective can be expressed as the condition that the numbers
+$$
+\int_{S_i}\pi_*(dz_1\wedge dz_2)
+$$
+are linearly independent over $\mathbb Z$. Explicitly computing these integrals gives the following result:
+
+\medskip
+
+\noindent
+\textbf{Remark.}  \emph{In case $n=2$ and $\Gamma$ generated by
+$e_j=(\alpha_j, \beta_j)$, $1\leq j\leq 4$, over $\mathbb Z$, then \cite[p.165]{Sha} tells us that $\ker {\rm int}_\Gamma=0$ if and only if 
+$$
+\alpha_j\beta_k-\alpha_k\beta_j, \ \\ 1\leq j<k\leq 4,
+$$
+are linearly independent over $\mathbb Z$. }
+
+\medskip
+
+For $n>2$, we have way more conditions. When we examine the case $k>1$, we must not only look at the group $H^{2k,0} (\mathbb C^2/\Gamma, \mathbb C)$, but also  the groups $H^{2k-1,1} (\mathbb C^2/\Gamma, \mathbb C)$ and so on. The group $H^{p,q} (\mathbb C^2/\Gamma, \mathbb C)$ has a basis given by the forms
+$$
+\pi_*(dz_P\wedge d\overline{z}_Q), \; P\in\mathbb N^p,Q\in\mathbb N^q,
+$$
+when we take $P$ and $Q$ to be ascending. We can compute the integrals
+$$
+\int_{S_i}\pi_*(dz_P\wedge d\overline{z}_Q)
+$$
+in a manner similar to the one which gives us the statement in the previous remark, and see that these are the numbers
+$$
+C^i_{P,Q}:=\mathrm{det}
+\left(
+\begin{matrix}
+e_{i_1,P_1}&...&e_{i_1,P_p} &\overline{e}_{i_1,Q_1}&...&\overline{e}_{i_1,Q_q}\\
+.& & & & &.\\
+.& & & & &.\\
+.& & & & &.\\
+e_{i_{2k},P_1}&...&e_{i_{2k},P_p} &\overline{e}_{i_{2k},Q_1}&...&\overline{e}_{i_{2k},Q_q}
+\end{matrix}
+\right).
+$$
+We may now reformulate our criterion for the nonexistence of subvarieties of the complex torus in the following way.
+
+\begin{lemma}
+We have $\rm{ker}$ $\rm int_{\Gamma} =0$ if and only if for every $0<k<n$ there exists no set of integers $\{a_i\}_{i\in I_k} \subseteq \mathbb Z$ not all equal to $0$ such that for all ascending multi-indices $P,Q$ where $(P,Q)\in \mathbb N^{2k}$ and $P$ has more entries than $Q$,
+$$
+\sum\limits_{i\in I_k}a_iC^i_{P,Q}=0.
+$$
+\end{lemma}
+
+This immediately give the following sufficient criterion which may be easier to check than the original condition. 
+
+\begin{corollary}
+$\rm{ker} \,\rm int_{\Gamma} =0$ if for every $0<k<n$ there exist multi-indices $P,Q$ where $(P,Q)\in \mathbb N^{2k}$ and $P$ has more entries than $Q$ are such that the numbers $\{C^i_{P,Q}\}_{i\in I_k}$ are linearly independent over $\mathbb Z$.
+\end{corollary}
+
+In general,  Lemma \ref{le:sha} gives the following explicit version of \cite[Thm 1.1]{LW}.
+
+\begin{theorem}\label{th:extra} $(e^{-\pi|t|^2}, \Lambda)$ is a Gabor frame for $L^2(\mathbb R^n)$ if one of the following assumptions holds: 
+\begin{enumerate}
+\item[(1)] $|\Lambda| <\frac1{n!}$ and $\ker {\rm int}_{\Lambda_{\mathbb C}} =0$, where
+$$
+\Lambda_{\mathbb C}:=\{\xi+ix \in \mathbb C^n: (\xi, x)\in \Lambda\}.
+$$
+\item[(2)] $|\Lambda| <\frac{n!}{n^n}$ and $\ker {\rm int}_{\Lambda^\circ_{\mathbb C}} =0$, where
+$$
+\Lambda^\circ_{\mathbb C}:=\{\eta+iy \in \mathbb C^n: \xi^T y -x^T\eta \in \mathbb Z, \ \forall\  (\xi,x) \in \Lambda\}.
+$$
+\end{enumerate}
+\end{theorem}
+
+\noindent
+\textbf{Remark.}  \emph{Almost all lattices in $\mathbb R^{2n}$ satisfy $\ker {\rm int}_{\Lambda_{\mathbb C}} =0$ and $\ker {\rm int}_{\Lambda^\circ_{\mathbb C}} =0$ (as we will show later on), hence the above theorem gives an effective Gabor frame criterion in terms of the covolume for almost all lattices. }
+
+\noindent
+\begin{corollary}
+In case $\Lambda = \mathbb Z^2 \times A \mathbb Z^2$, where $A$ is a real linear mapping defined by
+$$
+A(x,y):=(ax+by, cx+dy),
+$$
+then we have that 
+$$
+\ker {\rm int}_{\Lambda_{\mathbb C}} =0 \Leftrightarrow\ker {\rm int}_{\Lambda^\circ_{\mathbb C}} =0 \Leftrightarrow ad-bc \notin \mathbb Q, \ a,b,c,d \, \text{are $\mathbb Z$-linearly independent.} 
+$$
+Such a lattice then induces a Gabor frame if additionally, $|ad-bc|<\frac{1}{2}$. Thus the examples in Theorem 1.5 in \cite{RUZ} do not satisfy our assumptions and need not generate Gabor frames for $L^2(\mathbb{R}^2)$.
+\end{corollary}
+
+\begin{proof}
+    In this case the complexified  lattice $\Lambda_{\mathbb C}$ is generated by the vectors
+    \begin{align*}
+        \begin{pmatrix}
+            1\\
+            0
+        \end{pmatrix},
+        \begin{pmatrix}
+            0\\
+            1
+        \end{pmatrix},
+        \begin{pmatrix}
+            ia\\
+            ic
+        \end{pmatrix},
+        \begin{pmatrix}
+            ib\\
+            id
+        \end{pmatrix}.
+    \end{align*}
+    We may now apply the two dimensional version of our criterion for a transcendental lattice which was given in an earlier remark to see that $\Lambda$ is transcendental precisely when the determinants $1$, $bc-ad$, $ia$, $ib$, $ic$, and $id$ are linearly independent over $\mathbb Z$. This happens precisely when the condition given in the statement of the Lemma is fulfilled. The case of the symplectic dual can be verified in the same way.
+\end{proof}
+
+\medskip
+
+We will now prove the following genericity result:
+\begin{theorem}
+Transcendental tori are generic with respect to the choice of the lattice.
+\end{theorem} 
+We will first clarify what we mean by generic.  Consider the fact that the space of lattices is equal to the space $\mathrm{Gl}(2n,\mathbb R)/\mathrm{Gl}(2n,\mathbb Z)$. We say that a property is generic for lattices if there exists an $S\subsetneq \mathrm{Gl}(2n,\mathbb R)$,  which is a set of Lebesgue measure zero in $\mathbb R^{4n^2}$ such that the property is fulfilled by all lattices in $(\mathrm{Gl}(2n,\mathbb R)\setminus S)/\mathrm{Gl}(2n,\mathbb Z)$.
+\begin{proof}
+Consider any set of integers $\{a_i\}_{i\in I_k}$. Then the equations
+$$
+\sum\limits_{i\in I_k}a_iC^i_{P,Q}=0
+$$
+induce a closed variety in $\mathbb R^{4n^2}.$ It is sufficient to prove that a variety of this form has codimension of at least 1 for some given $(P,Q)$, as this will imply that the variety in this case is of Lebesgue measure zero , and the set in $\mathbb R^{4n^2}$ which does not induce a transcendental torus must be contained within this union. This is a simple observation to make since all we must show is that there is a point which does not lie in this subvariety. 
+
+\smallskip
+
+To see this,  observe in the case $2k\leq n$,  and choose $P$ to be of length $2k$ and $Q$ an empty multiindex. Then the polynomials $C^i_{P,Q}$ are linearly independent over $\mathbb R[e_{1,1},...,e_{2n,n}]$. 
+
+\smallskip
+
+We see this by looking at the "first term" of the $C^i_{P,Q}.$ By this, we mean the summand in the determinant which is given by multiplying the elements on the main diagonal.  So this term will be of the form
+$$
+e_{i_1,P_1}\cdot...\cdot e_{i_{2k},P_{2k}}.
+$$
+If we now choose a different index $j\in I_k$. Without loss of generality we may assume that the number $i_1$ does not occur in $j$.  This means that the variable $e_{i_1P_1}$ also cannot occur in $C^j_{P,Q}$, making $C^j_{P,Q}$ linearly independent from $C^i_{P,Q}$. Thus, nontrivial linear combinations of the $C^i_{P,Q}$ cannot vanish identically. 
+
+\smallskip
+
+Now observe the case where $2k>n$. We now take $P=(1,2,...n)$, and $Q$ to be of length $2k-n$. We need to check that the corresponding polynomials $C^i_{P,Q}$ are linearly independent over $\mathbb R[e_{1,1}, \bar e_{1,1}, ..,e_{2n,n}, \bar e_{2n, n}]$. 
+
+\smallskip
+
+Once again, this follows from that the term given by multiplying the elements of the diagonal, $e_{i_1,1}\cdot...\cdot e_{i_n,n}\cdot \overline{e}_{i_{n+1},Q_1}\cdot...\cdot \overline{e}_{i_{2k},Q_{2k-n}}
+$
+is unique with respect to $i$. 
+
+\begin{comment}
+The difficulty now is that, for example, the variables $e_{i _1,1}$ and $\overline{e}_{i _1,1}$ are not independent from each other. The key here is that $e_{i _1,1}$ and $\overline{e}_{i _1,1}$, are linearly independent polynomials over $\mathbb R$ in terms of their real and imaginary parts.This means that terms like 
+$$
+e_{i_1,1}\cdot...\cdot e_{i_n,n}\cdot \overline{e}_{i_{n+1}1}\cdot...\cdot \overline{e}_{i_{2k}Q_{2k-n}},
+$$
+and
+$$
+e_{i_2,2}\cdot...\cdot e_{i_{n},n}\cdot e_{i_{n+1},1} \cdot \overline{e}_{{i_1}1}\cdot...\cdot \overline{e}_{i_{2k}Q_{2k-n}},
+$$
+will be linearly independent over $\mathbb R [\Re (e_{1,1}), \Im (e_{1,1}),...,\Im (e_{2n,2n})]$, and thereby the $C^i_{p,Q}$ are as well.
+\end{comment}
+
+
+\end{proof}
+
+\begin{thebibliography}{99}
+
+\bibitem{Demailly12} J. P. Demailly, {\it Complex analytic and differential geometry}. Book available from the author's homepage.
+
+\bibitem{Dem92} J. P. Demailly {\it Regularization of closed positive currents and Intersection Theory}, J. Algebraic Geom. {\bf 1} (1992), 361-409
+
+\bibitem{GL} K. Gr\"ochenig and Y. Lyubarskii, {\it Sampling of Entire Functions of Several Complex Variables on a Lattice and Multivariate Gabor Frames}, Complex Var. Elliptic Equ. {\bf 65} (2020), 1717 -- 1735.
+
+\bibitem{LW} F.  Luef, X. Wang, {\it Gaussian Gabor frames, Seshadri constants and generalized Buser-Sarnak invariants}, Geom. Funct. Anal. {\bf33} (2023) 778-823. 
+
+\bibitem{RUZ} J.L. Romero, A Ulanovskii and I. Zlotnikov, {\it Sampling in the shift-invariant space generated by the bivariate Gaussian function}, arXiv:2306.13619.
+
+\bibitem{Sha} I. Shafarevich, {\it Basic algebraic geometry. 2. Schemes and complex manifolds}, Third edition.
+Translated from the 2007 third Russian edition by Miles Reid. Springer, Heidelberg, 2013.
+xiv+262 pp.
+
+\bibitem{Tosatti1} V. Tosatti, {\it The Calabi-Yau theorem and K\"ahler currents}, ADV. THEOR. MATH. PHYS., {\bf 20} (2016), 381--404.
+\end{thebibliography}
+
+
+\end{document}
