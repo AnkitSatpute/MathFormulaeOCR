@@ -1,5 +1,5 @@
 import os
-from wand.image import Image       #pip install wand
+from wand.image import Image       
 
 def pdf_to_images(input_folder, output_folder):
     os.makedirs(output_folder, exist_ok=True)
