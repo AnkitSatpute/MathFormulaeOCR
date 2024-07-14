@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[7]:
-
-
 import os
 from collections import defaultdict
 from latex2mathml.converter import convert
@@ -103,7 +97,7 @@ if __name__ == "__main__":
     process_latex_files(directory)
 
 
-# In[ ]:
+
 
 
 
