@@ -34,8 +34,9 @@ To use the code in this repository, follow these steps:
 2. Install dependencies
    pip install -r requirements.txt
 
-3. Usage
-   python convert_pdf.py --input_folder "     " --output_folder "     "
+## Usage
+Place the PDF to be converted to LaTeX in the folder "pdfs", specify the PDF location and the location for LaTeX output, and run the command: 
+        python convert_pdf.py --input_folder "PDF location" --output_folder "LaTeX location"
 
 
 
