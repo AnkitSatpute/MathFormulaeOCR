@@ -14,11 +14,11 @@ Repository of the experiments performed in creating a state-of-the-art Math form
 
 ## Introduction
 
-Accurately recognizing and understanding mathematical formulae in scientific documents is a challenging problem in artificial intelligence and machine learning. This repository explores various approaches and experiments conducted to advance the state-of-the-art in mathematical formulae character and layout recognition.
+Accurately recognizing and understanding mathematical formulae in scientific documents is a challenging problem in artificial intelligence and machine learning. This repository explores experiments conducted to advance the state-of-the-art in mathematical formulae character and layout recognition.
 
 ## Features
 
-- Techniques for enhancing the recognition of mathematical formulae.
+- Technique for enhancing the recognition of mathematical formulae.
 - Evaluation metrics used to measure the performance of the recognition method.
 
 ## Installation
