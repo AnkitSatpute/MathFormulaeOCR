@@ -8,9 +8,10 @@ Repository of the experiments performed in creating a state-of-the-art Math form
 2. [Features](#features)
 3. [Installation](#installation)
 4. [Usage](#usage)
-5. [Results](#results)
-6. [Contributing](#contributing)
-7. [Acknowledgement](#acknowledgement)
+5. [Evaluation](#evaluation)
+6. [Results](#results)
+7. [Contributing](#contributing)
+8. [Acknowledgement](#acknowledgement)
 
 ## Introduction
 
@@ -35,8 +36,8 @@ To use the code in this repository, follow these steps:
 Place the PDF to be converted to LaTeX in the folder "pdfs", specify the PDF location and the location for LaTeX output, and run the command: 
                 python convert_pdf.py --input_folder "PDF location" --output_folder "LaTeX location"
 
-### Evaluation
-    Execute the script "Evaluate.py" and enter the locations of detected and ground truth LaTeX files. The evaluation metrics will be computed and printed on the console. 
+## Evaluation
+Execute the script "Evaluate.py" and enter the locations of detected and ground truth LaTeX files. The evaluation metrics will be computed and printed on the console. 
 
 ## Results
 
