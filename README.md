@@ -10,7 +10,7 @@ Repository of the experiments performed in creating a state-of-the-art Math form
 4. [Usage](#usage)
 5. [Evaluation](#evaluation)
 6. [Results](#results)
-7. [Contributing](#contributing)
+7. [Contributions](#contributions)
 8. [Acknowledgement](#acknowledgement)
 
 ## Introduction
