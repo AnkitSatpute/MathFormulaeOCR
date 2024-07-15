@@ -13,7 +13,7 @@ This repository contains experiments and implementations aimed at developing sta
 4. [Usage](#usage)
 5. [Results](#results)
 6. [Contributing](#contributing)
-7. [License](#license)
+7. [Acknowledgement](#acknowledgement)
 
 ## Introduction
 
@@ -44,7 +44,10 @@ Place the PDF to be converted to LaTeX in the folder "pdfs", specify the PDF loc
 Contributions of any kind are welcome.
 
 ## Acknowledgement
-Code taken and modified from https://github.com/facebookresearch/nougat
+Codes taken and modified from 
+- https://github.com/facebookresearch/nougat
+- https://github.com/lukas-blecher/LaTeX-OCR
+- https://github.com/breezedeus/CnSTD
 
 
 
