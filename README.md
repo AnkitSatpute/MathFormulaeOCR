@@ -37,6 +37,15 @@ Place the PDF to be converted to LaTeX in the folder "pdfs", specify the PDF loc
 
 ## Results
 
+## Experiment Results
+
+| Experiment      | Precision | Recall | F-measure |
+|-----------------|-----------|--------|-----------|
+| Low complexity  | 57%       | 39%    | 47%       |
+| High complexity | 57%       | 37%    | 42%       |
+
+
+
 ## Contributions
 Contributions of any kind are welcome.
 
