@@ -1,9 +1,6 @@
 # MathFormulaeOCR
 Repository of the experiments performed in creating a state-of-the-art Math formula character and layout recognition methods.
 
-# Math Formula Character and Layout Recognition Methods
-
-This repository contains experiments and implementations aimed at developing state-of-the-art methods for recognizing characters and layouts within mathematical formulas.
 
 ## Table of Contents
 
