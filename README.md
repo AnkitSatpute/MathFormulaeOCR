@@ -31,7 +31,7 @@ To use the code in this repository, follow these steps:
 1. Clone the repository:
     git clone https://github.com/AnkitSatpute/MathFormulaeOCR.git
    
-2. Install dependencies
+2. Install dependencies:
    pip install -r requirements.txt
 
 ## Usage
