@@ -8,7 +8,7 @@ Repository of the experiments performed in creating a state-of-the-art Math form
 2. [Features](#features)
 3. [Installation](#installation)
 4. [Usage](#usage)
-5. [Results](#results)
+5. [Experiment Results](#experiment results)
 6. [Contributing](#contributing)
 7. [Acknowledgement](#acknowledgement)
 
@@ -34,8 +34,6 @@ To use the code in this repository, follow these steps:
 ## Usage
 Place the PDF to be converted to LaTeX in the folder "pdfs", specify the PDF location and the location for LaTeX output, and run the command: 
         python convert_pdf.py --input_folder "PDF location" --output_folder "LaTeX location"
-
-## Results
 
 ## Experiment Results
 
