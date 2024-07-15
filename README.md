@@ -38,5 +38,13 @@ To use the code in this repository, follow these steps:
 Place the PDF to be converted to LaTeX in the folder "pdfs", specify the PDF location and the location for LaTeX output, and run the command: 
         python convert_pdf.py --input_folder "PDF location" --output_folder "LaTeX location"
 
+## Results
+
+## Contributions
+Contributions of any kind are welcome.
+
+## Acknowledgement
+Code taken and modified from https://github.com/facebookresearch/nougat
+
 
 
