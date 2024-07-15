@@ -8,7 +8,7 @@ Repository of the experiments performed in creating a state-of-the-art Math form
 2. [Features](#features)
 3. [Installation](#installation)
 4. [Usage](#usage)
-5. [Experiment Results]
+5. [Experiment Results](#experiment results)
 6. [Contributing](#contributing)
 7. [Acknowledgement](#acknowledgement)
 
