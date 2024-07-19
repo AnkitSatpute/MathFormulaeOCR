@@ -19,9 +19,9 @@ def compute_max_depth(mathml_str):
 
         # Recursive function to compute the depth of an element
         def compute_element_depth(element):
-            # Base case: if element has no children, return 1
+            # Base case: if element has no children, return 0 (since we start counting from the root itself)
             if len(element) == 0:
-                return 1
+                return 0
             else:
                 # Recursively compute depth of children
                 children_depths = [compute_element_depth(child) for child in element]
@@ -31,35 +31,33 @@ def compute_max_depth(mathml_str):
         # Computing depth from the root element
         root_depth = compute_element_depth(mathml_tree)
 
-        return root_depth - 1  # Subtract 1 since we started from depth 1 instead of 0
+        return root_depth + 1  # Add 1 to account for the root node
 
     except Exception as e:
         return None
 
 def process_latex_files(directory):
     try:
-        # Ensure the provided directory exists
         if not os.path.isdir(directory):
             print(f"The directory '{directory}' does not exist.")
             return
         
-        # Initialize the frequency distribution for file complexities and error counts
+        # Folders for low and high complexity formulae
+        low_complexity_folder = os.path.join(directory, 'low_complexity')
+        high_complexity_folder = os.path.join(directory, 'high_complexity')
+        os.makedirs(low_complexity_folder, exist_ok=True)
+        os.makedirs(high_complexity_folder, exist_ok=True)
+
+        # Frequency distribution for file complexities and error counts
         file_complexity_distribution = defaultdict(int)
         conversion_error_count = 0
-
-        # Iterate through all .tex files in the directory
         for filename in os.listdir(directory):
             if filename.endswith(".tex"):
                 file_path = os.path.join(directory, filename)
                 with open(file_path, 'r', encoding='utf-8') as file:
                     latex_strings = file.readlines()
 
-                # Initialize variables to calculate total complexity and count
-                total_complexity_score = 0
-                count = 0
-                file_has_error = False
-
-                # Process each LaTeX string in the file
+                # To process each LaTeX string in the file:
                 for latex_str in latex_strings:
                     latex_str = latex_str.strip()
                     if latex_str:
@@ -67,27 +65,22 @@ def process_latex_files(directory):
                         if mathml_str:
                             complexity_score = compute_max_depth(mathml_str)
                             if complexity_score is not None:
-                                total_complexity_score += complexity_score
-                                count += 1
+                                # Complexity category 
+                                target_folder = low_complexity_folder if complexity_score <= 6 else high_complexity_folder
+                                target_path = os.path.join(target_folder, filename)
+                                with open(target_path, 'a', encoding='utf-8') as target_file:
+                                    target_file.write(latex_str + '\n')
+                                file_complexity_distribution[complexity_score] += 1
                         else:
-                            file_has_error = True
+                            conversion_error_count += 1
 
-                # Check if the file had a conversion error
-                if file_has_error:
-                    conversion_error_count += 1
-
-                # Calculate the average complexity score for the file and update the distribution
-                if count > 0:
-                    average_complexity_score = total_complexity_score / count
-                    file_complexity_distribution[round(average_complexity_score, 2)] += 1
-
-        # Print the frequency distribution of the file complexities
-        print("File Complexity Frequency Distribution:")
+        # Frequency distribution of the formulae complexities
+        print("Expression Complexity Frequency Distribution:")
         for complexity, frequency in sorted(file_complexity_distribution.items()):
             print(f"Complexity: {complexity}, Frequency: {frequency}")
         
-        # Print the count of files with conversion errors
-        print(f"\nNumber of files with conversion errors: {conversion_error_count}")
+        # Count of files with conversion errors
+        print(f"\nNumber of expressions with conversion errors: {conversion_error_count}")
 
     except Exception as e:
         print("Error processing LaTeX files:", e)
@@ -95,10 +88,3 @@ def process_latex_files(directory):
 if __name__ == "__main__":
     directory = input("Enter the directory containing the .tex files:\n")
     process_latex_files(directory)
-
-
-
-
-
-
-
