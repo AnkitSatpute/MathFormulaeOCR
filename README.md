@@ -4,23 +4,13 @@ Repository of the experiments performed in creating a state-of-the-art Math form
 
 ## Table of Contents
 
-1. [Introduction](#introduction)
-2. [Features](#features)
-3. [Installation](#installation)
-4. [Usage](#usage)
-5. [Evaluation](#evaluation)
-6. [Results](#results)
-7. [Contributions](#contributions)
-8. [Acknowledgement](#acknowledgement)
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [Evaluation](#evaluation)
+4. [Results](#results)
+5. [Contributions](#contributions)
+6. [Acknowledgement](#acknowledgement)
 
-## Introduction
-
-Accurately recognizing and understanding mathematical formulae in scientific documents is a challenging problem in artificial intelligence and machine learning. This repository explores experiments conducted to advance the state-of-the-art in mathematical formulae character and layout recognition.
-
-## Features
-
-- Technique for enhancing the recognition of mathematical formulae.
-- Evaluation metrics used to measure the performance of the recognition method.
 
 ## Installation
 
@@ -33,11 +23,12 @@ To use the code in this repository, follow these steps:
    pip install -r requirements.txt
 
 ## Usage
-Place the PDF to be converted to LaTeX in the folder "pdfs", specify the PDF location and the location for LaTeX output, and run the command: 
+1. Place the PDF to be converted to LaTeX in the folder "pdfs", specify the PDF location and the location for LaTeX output, and run the command: 
                 python convert_pdf.py --input_folder "PDF location" --output_folder "LaTeX location"
+2. Images of Math Formulae annotated as "MFs.jpg" have corresponding MFs.tex; manual adjustments might be necessary for erroneous images/text files. 
 
 ## Evaluation
-Execute the script "Evaluate.py" and enter the locations of detected and ground truth LaTeX files. The evaluation metrics will be computed and printed on the console. 
+Execute the script "Evaluate.py" and input the locations of detected and ground truth LaTeX files. The evaluation metrics will be computed and printed on the console. 
 
 ## Results
 
